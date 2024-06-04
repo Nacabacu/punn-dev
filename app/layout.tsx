@@ -1,8 +1,12 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Ubuntu_Mono } from 'next/font/google'
 import './globals.css';
+import Navbar from '@/components/navbar';
 
-const inter = Inter({ subsets: ['latin'] });
+const roboto = Ubuntu_Mono({
+  weight: '400',
+  subsets: ['latin'],
+})
 
 export const metadata: Metadata = {
   title: 'Punn a developer',
@@ -17,7 +21,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={roboto.className}>
+        <div className="flex items-center mt-64 flex-col">
+          <Navbar />
+          {children}
+        </div>
+      </body>
     </html>
   );
 }
