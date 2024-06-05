@@ -1,5 +1,6 @@
 import LinkWrapper from '@/components/linkWrapper';
 import HomeIcon from '@mui/icons-material/Home';
+import { HOME_URL } from '@/const';
 
 export default function NotFound() {
   return (
@@ -7,7 +8,7 @@ export default function NotFound() {
       <div className='font-extrabold text-4xl'>
         404 Not Found :(
       </div>
-      <LinkWrapper url='/'>
+      <LinkWrapper url={HOME_URL}>
         <div className='text-xl mt-8 flex items-center space-x-2'>
           <span>Back to Home</span>
           <HomeIcon/>

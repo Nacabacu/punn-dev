@@ -1,6 +1,6 @@
 import { defineType } from 'sanity';
 
-export default defineType({
+export const tag = defineType({
   name: 'tag',
   title: 'Tag',
   type: 'document',

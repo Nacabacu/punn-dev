@@ -4,8 +4,9 @@ interface HeaderProps {
 
 export default function Header({ title }: HeaderProps) {
   return (
-    <header className='flex flex-col justify-center border-b-2 border-dashed border-primary dark:border-primaryDark w-full pb-4 border-opacity-50'>
-      <h2 className='text-4xl mx-auto max-w-2xl font-extrabold'>
+    <header className='flex flex-col justify-center border-b border-dashed border-primary
+     dark:border-primaryDark w-full pb-8 mb-8 border-opacity-50'>
+      <h2 className='text-4xl 2xl:mx-60 xl:mx-48 lg:mx-32 md:mx-16 sm:mx-8 mx-2 font-extrabold text-center'>
         {title}
       </h2>
     </header>

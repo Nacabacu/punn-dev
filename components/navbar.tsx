@@ -4,19 +4,20 @@ import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
 import LinkWrapper from './linkWrapper';
 import ThemeSwitch from './themeSwitch';
+import { BLOGS_URL, HOME_URL, PROJECTS_URL } from '@/const';
 
 const LINKS = [
     {
       name: 'Home',
-      url: '/',
+      url: HOME_URL,
     },
     {
       name: 'Blogs',
-      url: '/blogs',
+      url: BLOGS_URL,
     },
     {
       name: 'Projects',
-      url: '/projects',
+      url: PROJECTS_URL,
     },
 ];
 

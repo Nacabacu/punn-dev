@@ -1,6 +1,6 @@
 import  { defineType, defineArrayMember, defineField } from 'sanity'
 
-export default defineType({
+export const blockContent = defineType({
   title: 'Block Content',
   name: 'blockContent',
   type: 'array',
@@ -14,6 +14,8 @@ export default defineType({
         {title: 'H2', value: 'h2'},
         {title: 'H3', value: 'h3'},
         {title: 'H4', value: 'h4'},
+        {title: 'H5', value: 'h5'},
+        {title: 'H6', value: 'h6'},
         {title: 'Quote', value: 'blockquote'},
       ],
       lists: [

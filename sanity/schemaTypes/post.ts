@@ -1,6 +1,6 @@
 import { defineField, defineType } from 'sanity'
 
-export default defineType({
+export const post = defineType({
   name: 'post',
   title: 'Post',
   type: 'document',
@@ -22,8 +22,8 @@ export default defineType({
       validation: (Rule) => Rule.required().error('A slug is required.'),
     }),
     defineField({
-      name: 'tag',
-      title: 'Tag',
+      name: 'tags',
+      title: 'Tags',
       type: 'array',
       of: [{type: 'reference', to: {type: 'tag'}}],
     }),
@@ -45,15 +45,16 @@ export default defineType({
       type: 'blockContent',
     }),
   ],
-
   preview: {
     select: {
       title: 'title',
-      author: 'author.name',
-      media: 'mainImage',
+      publishedAt: 'publishedAt',
     },
-    prepare(selection) {
-      return {...selection}
+    prepare({ title, publishedAt }) {
+      return {
+        title,
+        subtitle: new Date(publishedAt).toLocaleDateString(),
+      }
     },
   },
 })
