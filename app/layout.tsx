@@ -11,9 +11,9 @@ const roboto = Ubuntu_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Punn a developer',
+  title: 'Punn',
   description: 'Portfolio website of Punn',
-  keywords: ['Punn', 'developer', 'portfolio'],
+  keywords: ['Punn', 'Nararatwong', 'Punn Nararatwong', 'full stack developer', 'programmer', 'developer', 'portfolio'],
 };
 
 export default function RootLayout({

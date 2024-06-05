@@ -1,5 +1,10 @@
 import LinkWrapper from '@/components/linkWrapper';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Punn | Projects',
+};
 
 export default function Project() {
   return (
