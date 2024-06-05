@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
-import { Ubuntu_Mono } from 'next/font/google'
+import { Ubuntu_Mono } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/react';
+
 import './globals.css';
 import Navbar from '@/components/navbar';
 
@@ -22,6 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={roboto.className}>
+        <Analytics />
         <div className="flex items-center mt-64 flex-col">
           <Navbar />
           {children}
