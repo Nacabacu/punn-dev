@@ -8,7 +8,7 @@ interface LinkWrapperProps {
 
 export default function LinkWrapper({ children, url, newtab }: LinkWrapperProps) {
   return (
-    <Link href={url} className="hover:text-blue-500" target={newtab ? '_blank' : undefined}>
+    <Link href={url} className='hover:text-primary dark:hover:text-primaryDark' target={newtab ? '_blank' : undefined}>
       {children}
     </Link>
   );

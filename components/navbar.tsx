@@ -3,21 +3,40 @@
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
 import LinkWrapper from './linkWrapper';
+import ThemeSwitch from './themeSwitch';
 
-const HOME_PATH = '/';
-const PROJECTS_PATH = '/projects';
+const LINKS = [
+    {
+      name: 'Home',
+      url: '/',
+    },
+    {
+      name: 'Blogs',
+      url: '/blogs',
+    },
+    {
+      name: 'Projects',
+      url: '/projects',
+    },
+];
 
 export default function Navbar() {
 	const pathname = usePathname();
 
   return (
-    <div className="flex justify-center gap-x-10 mb-10">
-      <LinkWrapper url={HOME_PATH}>
-				<span className={clsx('text-xl', { 'text-blue-500': pathname === HOME_PATH })}>Home</span>
-      </LinkWrapper>
-      <LinkWrapper url={PROJECTS_PATH}>
-        <span className={clsx('text-xl', { 'text-blue-500': pathname === PROJECTS_PATH })}>Projects</span>
-      </LinkWrapper>
-    </div>
+    <>
+      <div className='flex justify-center gap-x-10 mb-8'>
+        {
+          LINKS.map(({ name, url }) => (
+            <LinkWrapper key={name} url={url}>
+              <span className={clsx('text-xl', { 'text-primary dark:text-primaryDark': pathname === url })}>{name}</span>
+            </LinkWrapper>
+          ))
+        }
+      </div>
+      <div className='absolute right-8'>
+        <ThemeSwitch />
+      </div>
+    </>
   );
 }

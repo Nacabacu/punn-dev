@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   title: 'Punn | Projects',
 };
 
-export default function Project() {
+export default function ProjectPage() {
   return (
     <>
-      <div className="space-y-2">
-        <LinkWrapper url="https://genshin-planner.punn.dev" newtab>
-          <span className="text-xl flex items-center">Genshin Planner<OpenInNewIcon className="ml-1" /></span>
+      <div className='space-y-2'>
+        <LinkWrapper url='https://genshin-planner.punn.dev' newtab>
+          <span className='text-xl flex items-center'>Genshin Planner<OpenInNewIcon className='ml-1' /></span>
         </LinkWrapper>
       </div>
     </>
