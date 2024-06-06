@@ -7,6 +7,8 @@ interface ThemProviderProps {
   children: React.ReactNode;
 }
 
-export default function ThemeProvider({ children }: ThemProviderProps) {
+const ThemeProvider = ({ children }: ThemProviderProps) => {
   return <NextThemeProvider defaultTheme="system" attribute='class'>{children}</NextThemeProvider>;
 };
+
+export default ThemeProvider;

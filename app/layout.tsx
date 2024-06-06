@@ -20,11 +20,11 @@ export const metadata: Metadata = {
   keywords: ['Punn', 'Nararatwong', 'Punn Nararatwong', 'full stack developer', 'programmer', 'developer', 'portfolio'],
 };
 
-export default function RootLayout({
+const RootLayout = ({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>) => {
   return (
     <html lang='en' suppressHydrationWarning>
       <body className={roboto.className}>
@@ -36,3 +36,5 @@ export default function RootLayout({
     </html>
   );
 }
+
+export default RootLayout;

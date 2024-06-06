@@ -7,7 +7,7 @@ interface TagProps {
   slug: Slug;
 }
 
-export default function Tag({ name, slug }: TagProps) {
+const Tag = ({ name, slug }: TagProps) => {
   return (
     <Link href={`${BLOGS_TAG_URL}/${slug.current}`}>
       <span className='mr-2 p-1 rounded-sm text-sm lowercase border transition-background-color 
@@ -15,3 +15,5 @@ export default function Tag({ name, slug }: TagProps) {
     </Link>
   )
 }
+
+export default Tag;

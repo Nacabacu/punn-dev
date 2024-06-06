@@ -46,7 +46,7 @@ async function getPost(slug: string): Promise<Post> {
 
 export const revalidate = 60;
 
-export default async function BlogPage({ params }: Params) {
+const BlogPage = async ({ params }: Params) => {
   const post: Post = await getPost(params?.slug);
 
   if (!post) {
@@ -130,3 +130,5 @@ const myPortableTextComponents: Partial<PortableTextReactComponents> = {
 // prose-li:list-disc
 // prose-li:leading-7
 // prose-li:ml-4
+
+export default BlogPage;

@@ -3,7 +3,7 @@ import { HOME_URL } from '@/const';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouseChimney } from '@fortawesome/free-solid-svg-icons';
 
-export default function NotFound() {
+const NotFound = () => {
   return (
     <div className='flex flex-col justify-center items-center h-screen bg-background dark:bg-backgroundDark'>
       <div className='font-extrabold text-4xl'>
@@ -18,3 +18,5 @@ export default function NotFound() {
     </div>
   )
 }
+
+export default NotFound;

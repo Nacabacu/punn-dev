@@ -21,7 +21,7 @@ const LINKS = [
     },
 ];
 
-export default function Navbar() {
+const Navbar = () => {
 	const pathname = usePathname();
 
   return (
@@ -41,3 +41,5 @@ export default function Navbar() {
     </nav>
   );
 }
+
+export default Navbar;

@@ -2,7 +2,7 @@ import React from 'react';
 import LinkWrapper from '@/components/linkWrapper';
 import { BLOGS_URL } from '@/const';
 
-export default function NotFound() {
+const NotFound = () => {
   return (
     <div className='flex flex-col flex-grow justify-center items-center bg-background dark:bg-backgroundDark'>
       <div className='font-extrabold text-4xl'>
@@ -16,3 +16,5 @@ export default function NotFound() {
     </div>
   );
 };
+
+export default NotFound;

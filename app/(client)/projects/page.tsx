@@ -8,9 +8,9 @@ export const metadata: Metadata = {
   title: 'Punn | Projects',
 };
 
-export default function ProjectPage() {
+const ProjectPage = () => {
   return (
-    <>
+  <>
       <div className="flex flex-col items-center">
         <Header title="Projects" />
         <LinkWrapper url="https://genshin-planner.punn.dev" newtab>
@@ -23,3 +23,5 @@ export default function ProjectPage() {
     </>
   );
 }
+
+export default ProjectPage;

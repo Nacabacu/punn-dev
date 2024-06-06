@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   title: 'Punn | Blogs',
 };
 
-export default async function BlogPage() {
+const BlogPage = async () => {
   const postList = await getPosts();
 
   return (
@@ -46,3 +46,5 @@ export default async function BlogPage() {
     </>
   );
 }
+
+export default BlogPage;

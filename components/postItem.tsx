@@ -7,7 +7,7 @@ interface PostItemProps {
   post: Post;
 }
 
-export default function PostItem({ post }: PostItemProps) {
+const PostItem = ({ post }: PostItemProps) => {
   return (
     <div className='flex flex-col p-4 rounded-md shadow-md
     transition-all hover:bg-secondary hover:text-white
@@ -28,3 +28,5 @@ export default function PostItem({ post }: PostItemProps) {
     </div>
   );
 }
+
+export default PostItem;

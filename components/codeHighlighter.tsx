@@ -7,7 +7,7 @@ interface CodeHighlighterProps {
   language: string;
 }
 
-export default function CodeHighlighter({ code, language }: CodeHighlighterProps) {
+const CodeHighlighter = ({ code, language }: CodeHighlighterProps) => {
   return (
     <Highlight
       language={language || 'javascript'}
@@ -28,3 +28,5 @@ export default function CodeHighlighter({ code, language }: CodeHighlighterProps
     </Highlight>
   );
 }
+
+export default CodeHighlighter;

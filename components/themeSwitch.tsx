@@ -4,8 +4,9 @@ import React, { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
+import exp from 'constants';
 
-export default function ThemeSwitch() {
+const ThemeSwitch = () => {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -26,3 +27,5 @@ export default function ThemeSwitch() {
     </button>
   );
 };
+
+export default ThemeSwitch;

@@ -2,7 +2,7 @@ interface HeaderProps {
   title: string;
 }
 
-export default function Header({ title }: HeaderProps) {
+const Header = ({ title }: HeaderProps) => {
   return (
     <header className='flex flex-col justify-center border-b border-dashed border-primary
      dark:border-primaryDark w-full pb-8 mb-8 border-opacity-50'>
@@ -12,3 +12,5 @@ export default function Header({ title }: HeaderProps) {
     </header>
   );
 }
+
+export default Header;

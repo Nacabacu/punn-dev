@@ -3,7 +3,7 @@ import { faGithub, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-
 
 import LinkWrapper from '@/components/linkWrapper';
 
-export default function HomePage() {
+const HomePage = () => {
   return (
     <div className='flex flex-grow flex-col justify-center items-center h-full'>
       <div className='font-extrabold text-5xl text-center'>Punn Nararatwong</div>
@@ -22,3 +22,5 @@ export default function HomePage() {
     </div>
   );
 }
+
+export default HomePage;
