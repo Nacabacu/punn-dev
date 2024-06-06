@@ -3,7 +3,11 @@ import { Ubuntu_Mono } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 
 import './globals.css';
+import '@fortawesome/fontawesome-svg-core/styles.css';
+import { config } from '@fortawesome/fontawesome-svg-core';
 import ThemeProvider from '@/utils/themeProvider';
+
+config.autoAddCss = false;
 
 const roboto = Ubuntu_Mono({
   weight: '400',

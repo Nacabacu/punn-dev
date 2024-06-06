@@ -2,8 +2,8 @@
 
 import React, { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
-import DarkModeIcon from '@mui/icons-material/DarkMode';
-import LightModeIcon from '@mui/icons-material/LightMode';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 
 export default function ThemeSwitch() {
   const { theme, setTheme } = useTheme();
@@ -22,7 +22,7 @@ export default function ThemeSwitch() {
       className='text-primary dark:text-primaryDark'
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
     >
-      {theme === 'dark' ? <LightModeIcon /> : <DarkModeIcon />}
+      <FontAwesomeIcon icon={theme === 'dark' ? faSun : faMoon} className='text-xl' />
     </button>
   );
 };

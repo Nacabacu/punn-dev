@@ -25,8 +25,8 @@ export default function Navbar() {
 	const pathname = usePathname();
 
   return (
-    <>
-      <div className='flex justify-center gap-x-10 mb-8'>
+    <nav className='flex flex-col'>
+      <div className='flex justify-center gap-x-10 my-8 leading-7'>
         {
           LINKS.map(({ name, url }) => (
             <LinkWrapper key={name} url={url}>
@@ -35,9 +35,9 @@ export default function Navbar() {
           ))
         }
       </div>
-      <div className='absolute xs:right-8 right-6'>
+      <div className='absolute top-8 xs:right-8 right-6 flex leading-7 items-center'>
         <ThemeSwitch />
       </div>
-    </>
+    </nav>
   );
 }

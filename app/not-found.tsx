@@ -1,6 +1,7 @@
 import LinkWrapper from '@/components/linkWrapper';
-import HomeIcon from '@mui/icons-material/Home';
 import { HOME_URL } from '@/const';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHouseChimney } from '@fortawesome/free-solid-svg-icons';
 
 export default function NotFound() {
   return (
@@ -11,7 +12,7 @@ export default function NotFound() {
       <LinkWrapper url={HOME_URL}>
         <div className='text-xl mt-8 flex items-center space-x-2'>
           <span>Back to Home</span>
-          <HomeIcon/>
+          <FontAwesomeIcon icon={faHouseChimney} />
         </div>
       </LinkWrapper>
     </div>

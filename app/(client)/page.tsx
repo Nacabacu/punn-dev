@@ -1,6 +1,6 @@
-import InstagramIcon from '@mui/icons-material/Instagram';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+
 import LinkWrapper from '@/components/linkWrapper';
 
 export default function HomePage() {
@@ -10,13 +10,13 @@ export default function HomePage() {
       <div className='text-xl pt-4 text-primary dark:text-primaryDark'>a full stack developer</div>
       <div className='text-xl pt-4 space-x-12'>
         <LinkWrapper url='https://github.com/Nacabacu'>
-          <GitHubIcon className='text-3xl' />
+          <FontAwesomeIcon icon={faGithub} className='text-3xl' />
         </LinkWrapper>
         <LinkWrapper url='https://www.instagram.com/p.nacabacu'>
-          <InstagramIcon className='text-3xl' />
+          <FontAwesomeIcon icon={faInstagram} className='text-3xl' />
         </LinkWrapper>
-        <LinkWrapper url='https://th.linkedin.com/in/punn-nararatwong-4a7b5814a'>
-          <LinkedInIcon className='text-3xl' />
+          <LinkWrapper url='https://th.linkedin.com/in/punn-nararatwong-4a7b5814a'>
+        <FontAwesomeIcon icon={faLinkedin} className='text-3xl' />
         </LinkWrapper>
       </div>
     </div>

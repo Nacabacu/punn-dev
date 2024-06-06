@@ -13,7 +13,7 @@ export default function PostItem({ post }: PostItemProps) {
     transition-all hover:bg-secondary hover:text-white
     dark:hover:bg-backgroundDark dark:shadow-lg dark:hover:shadow-2xl'>
       <Link href={`${BLOGS_URL}/${post?.slug?.current}`}>
-        <h2 className={'text-2xl'}>{post?.title}</h2>
+        <h2 className={'text-2xl line-clamp-2'}>{post?.title}</h2>
         <p className={'text-sm my-1 text-primary dark:text-primaryDark'}>{new Date(post?.publishedAt).toDateString()}</p>
         <p className='mb-4 line-clamp-2'>{post?.excerpt}</p>
       </Link>
