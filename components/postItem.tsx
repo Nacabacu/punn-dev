@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Post } from '@/types/sanity';
-import Tag from './tag';
+import Tag from './tagButton';
 import { BLOGS_URL } from '../const';
 
 interface PostItemProps {

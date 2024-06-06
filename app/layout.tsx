@@ -15,9 +15,21 @@ const roboto = Ubuntu_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Punn',
-  description: 'Portfolio website of Punn',
-  keywords: ['Punn', 'Nararatwong', 'Punn Nararatwong', 'full stack developer', 'programmer', 'developer', 'portfolio'],
+  metadataBase: new URL('https://punn.dev/'),
+  title: {
+    default: 'Punn.dev',
+    template: '%s | Punn.dev'
+  },
+  keywords: ['Punn', 'Nararatwong', 'Punn Nararatwong', 'full stack developer', 'programmer', 'developer', 'portfolio', 'blog', 'development blog'],
+  description: 'Punn\'s blogs',
+  openGraph: {
+    title: 'Punn.dev',
+    description: 'Punn\'s blogs',
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://punn.dev/',
+    siteName: 'DevBlook'
+  },
 };
 
 const RootLayout = ({

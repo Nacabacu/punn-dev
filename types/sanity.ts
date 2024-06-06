@@ -17,3 +17,7 @@ export interface Tag {
   slug: Slug;
   _id: string;
 }
+
+export interface TagCount extends Tag {
+  postCount: number;
+}

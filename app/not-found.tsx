@@ -6,7 +6,7 @@ import { faHouseChimney } from '@fortawesome/free-solid-svg-icons';
 const NotFound = () => {
   return (
     <div className='flex flex-col justify-center items-center h-screen bg-background dark:bg-backgroundDark'>
-      <div className='font-extrabold text-4xl'>
+      <div className='font-extrabold text-4xl text-primary dark:text-primaryDark'>
         404 Not Found :(
       </div>
       <LinkWrapper url={HOME_URL}>

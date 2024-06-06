@@ -25,9 +25,11 @@ const Footer = () => {
     <footer className='text-center text-sm'>
       {
         hasScroll &&
-        <div className='py-4 space-x-2 cursor-pointer hover:text-primary dark:hover:text-primaryDark transition-colors' onClick={scrollToTop}>
-          <span>Back to top</span>
-          <FontAwesomeIcon icon={faUpLong} />
+        <div className='flex justify-center py-8'>
+          <div className='space-x-2 cursor-pointer hover:text-primary dark:hover:text-primaryDark transition-colors' onClick={scrollToTop}>
+            <span className='text-lg'>Back to top</span>
+            <FontAwesomeIcon icon={faUpLong} />
+          </div>
         </div>
       }
     </footer>
