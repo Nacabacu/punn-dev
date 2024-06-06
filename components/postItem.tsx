@@ -10,7 +10,7 @@ interface PostItemProps {
 export default function PostItem({ post }: PostItemProps) {
   return (
     <div className='flex flex-col p-4 rounded-md shadow-md
-    hover:bg-secondary hover:text-white
+    transition-all hover:bg-secondary hover:text-white
     dark:hover:bg-backgroundDark dark:shadow-lg dark:hover:shadow-2xl'>
       <Link href={`${BLOGS_URL}/${post?.slug?.current}`}>
         <h2 className={'text-2xl'}>{post?.title}</h2>

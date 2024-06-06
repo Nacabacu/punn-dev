@@ -1,7 +1,6 @@
 import Image from 'next/image';
-import { PortableText, PortableTextReactComponents } from 'next-sanity';
+import { PortableText, PortableTextBlock, PortableTextComponentProps, PortableTextReactComponents } from 'next-sanity';
 
-import { slugify } from '@/utils/slugify';
 import { Post } from '@/types/sanity';
 import { client } from '@/sanity/lib/client';
 import { urlForImage } from '@/sanity/lib/image';
@@ -9,6 +8,7 @@ import Header from '@/components/header';
 import Tag from '@/components/tag';
 
 import NotFound from './not-found';
+import { Image as SanityImage } from 'sanity';
 
 interface Params {
   params: {
@@ -58,7 +58,7 @@ export default async function BlogPage({ params }: Params) {
             <Tag key={tag?._id} name={tag?.name} slug={tag?.slug} />
           ))}
         </div>
-        <div className={richTextStyles}>
+        <div className='mt-8 text-justify 2xl:mx-60 xl:mx-48 lg:mx-32 md:mx-24 sm:mx-16 mx-8'>
           <PortableText
             value={post?.body}
             components={myPortableTextComponents}
@@ -71,7 +71,7 @@ export default async function BlogPage({ params }: Params) {
 
 const myPortableTextComponents: Partial<PortableTextReactComponents> = {
   types: {
-    image: ({ value }: any) => (
+    image: ({ value }: PortableTextComponentProps<SanityImage>) => (
       <Image
         src={urlForImage(value)}
         alt='Post'
@@ -81,75 +81,52 @@ const myPortableTextComponents: Partial<PortableTextReactComponents> = {
     ),
   },
   block: {
-    h1: ({ value }: any) => (
-      <h1
-        id={slugify(value.children[0].text)}
-        className='text-4xl font-bold mb-3'
-      >
+    h1: ({ value }: PortableTextComponentProps<PortableTextBlock>) => (
+      <h1 className='text-4xl font-bold mb-3'>
         {value.children[0].text}
       </h1>
     ),
-    h2: ({ value }: any) => (
-      <h2
-        id={slugify(value.children[0].text)}
-        className='text-3xl font-bold mb-3'
-      >
+    h2: ({ value }: PortableTextComponentProps<PortableTextBlock>) => (
+      <h2 className='text-3xl font-bold mb-3'>
         {value.children[0].text}
       </h2>
     ),
-    h3: ({ value }: any) => (
-      <h3
-        id={slugify(value.children[0].text)}
-        className='text-2xl font-bold mb-3'
-      >
+    h3: ({ value }: PortableTextComponentProps<PortableTextBlock>) => (
+      <h3 className='text-2xl font-bold mb-3'>
         {value.children[0].text}
       </h3>
     ),
-    h4: ({ value }: any) => (
-      <h4
-        id={slugify(value.children[0].text)}
-        className='text-2xl font-bold mb-3'
-      >
+    h4: ({ value }: PortableTextComponentProps<PortableTextBlock>) => (
+      <h4 className='text-2xl font-bold mb-3'>
         {value.children[0].text}
-        </h4>
+      </h4>
     ),
-    h5: ({ value }: any) => (
-      <h5
-        id={slugify(value.children[0].text)}
-        className='text-xl font-bold mb-3'
-      >
+    h5: ({ value }: PortableTextComponentProps<PortableTextBlock>) => (
+      <h5 className='text-xl font-bold mb-3'>
         {value.children[0].text}
       </h5>
     ),
-    h6: ({ value }: any) => (
-      <h6
-        id={slugify(value.children[0].text)}
-        className='text-lg font-bold mb-3'
-      >
+    h6: ({ value }: PortableTextComponentProps<PortableTextBlock>) => (
+      <h6 className='text-lg font-bold mb-3'>
         {value.children[0].text}
       </h6>
     ),
-    strong: ({ value }: any) => (
-      <h6
-        id={slugify(value.children[0].text)}
-        className='text-lg font-bold mb-3'
-      >
+    normal: ({ value }: PortableTextComponentProps<PortableTextBlock>) => (
+      <p className='text-base leading-7 mb-5'>
         {value.children[0].text}
-      </h6>
+      </p>
+    ),
+    strong: ({ value }: PortableTextComponentProps<PortableTextBlock>) => (
+      <p className='text-base leading-7 font-extrabold mb-5'>
+        {value.children[0].text}
+      </p>
     ),
   },
 };
-
-const richTextStyles = `
-mt-8
-text-justify
-2xl:mx-60 xl:mx-48 lg:mx-32 md:mx-24 sm:mx-16 mx-8
-m-auto
-prose-headings:my-5
-prose-heading:text-2xl
-prose-p:mb-5
-prose-p:leading-7
-prose-li:list-disc
-prose-li:leading-7
-prose-li:ml-4
-`;
+// prose-headings:my-5
+// prose-heading:text-2xl
+// prose-p:mb-5
+// prose-p:leading-7
+// prose-li:list-disc
+// prose-li:leading-7
+// prose-li:ml-4

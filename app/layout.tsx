@@ -22,8 +22,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
-      <body className={`${roboto.className} min-h-screen`}>
+    <html lang='en' suppressHydrationWarning>
+      <body className={roboto.className}>
         <Analytics />
         <ThemeProvider>
           {children}

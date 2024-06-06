@@ -15,6 +15,12 @@ const config: Config = {
         primaryDark: '#ff7113',
         secondary: '#003675',
         secondaryDark: '#fa9450'
+      },
+      screens: {
+        xs: '420px',
+      },
+      transitionProperty: {
+        'background-color': 'background-color'
       }
     },
   },

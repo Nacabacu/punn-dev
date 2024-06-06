@@ -30,12 +30,12 @@ export default function Navbar() {
         {
           LINKS.map(({ name, url }) => (
             <LinkWrapper key={name} url={url}>
-              <span className={clsx('text-xl', { 'text-primary dark:text-primaryDark': pathname === url })}>{name}</span>
+              <span className={clsx('text-xl transition-colors', { 'text-primary dark:text-primaryDark': pathname === url })}>{name}</span>
             </LinkWrapper>
           ))
         }
       </div>
-      <div className='absolute right-8'>
+      <div className='absolute xs:right-8 right-6'>
         <ThemeSwitch />
       </div>
     </>
