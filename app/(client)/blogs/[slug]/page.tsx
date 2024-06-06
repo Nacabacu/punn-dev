@@ -75,7 +75,7 @@ const BlogPage = async ({ params }: Params) => {
   return (
     <div className="flex flex-col items-center">
       <Header title={post?.title} />
-      <div className="text-center">
+      <div className="text-center max-w-full">
         <span className={'text-primary dark:text-primaryDark'}>
           {new Date(post?.publishedAt).toDateString()}
         </span>
