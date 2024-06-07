@@ -61,6 +61,9 @@ export const blockContent = defineType({
       title: 'Code Block',
       name: 'code',
       type: 'code',
+      options: {
+        withFilename: true,
+      }
     }),
   ],
 });

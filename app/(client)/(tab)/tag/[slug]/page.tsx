@@ -30,16 +30,14 @@ const TagPage = async ({ params }: Params) => {
   const postList = await getPostsByTag(params.slug);
 
   return (
-    <div className='flex flex-col items-center'>
+    <div className='space-y-6'>
       <Header title={`#${params.slug}`} />
-      <div className='space-y-6 2xl:mx-96 xl:mx-64 lg:mx-48 md:mx-32 sm:mx-16 mx-8'>
-        {postList?.length > 0 &&
-          postList?.map((post) => (
-            <PostItem key={post.slug.current} post={post} />
-          ))}
-      </div>
+      {postList?.length > 0 &&
+        postList?.map((post) => (
+          <PostItem key={post.slug.current} post={post} />
+        ))}
     </div>
-  )
+  );
 };
 
 export default TagPage;

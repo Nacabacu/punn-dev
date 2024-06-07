@@ -13,8 +13,6 @@ const config: Config = {
             '--tw-prose-bullets': '#78716c',
             '--tw-prose-links': '#0070f3',
             '--tw-prose-invert-links': '#ff7113',
-            '--tw-prose-quote-borders': '#0070f3',
-            '--tw-prose-invert-quote-borders': '#ff7113',
           },
         },
       }),
@@ -24,7 +22,9 @@ const config: Config = {
         primary: '#0070f3',
         primaryDark: '#ff7113',
         secondary: '#003675',
-        secondaryDark: '#fa9450'
+        secondaryDark: '#fa9450',
+        gray: '#9ca3af',
+        grayDark: '#374151',
       },
       screens: {
         xs: '420px',

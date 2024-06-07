@@ -11,8 +11,10 @@ interface TagProps {
 const TagButton = ({ name, slug, count }: TagProps) => {
   return (
     <Link href={`${TAG_URL}/${slug.current}`}>
-      <span className='mr-2 p-1 rounded-sm text-sm lowercase border transition-background-color 
-      border-primary dark:border-primaryDark hover:text-white hover:bg-primary dark:hover:bg-primaryDark'>#{name}</span>
+      <span className='mr-2 p-1 rounded text-sm lowercase border transition-background-color 
+      border-primary dark:border-primaryDark hover:text-white hover:bg-primary dark:hover:bg-primaryDark'>
+        {count ? `#${name} (${count})` : `#${name}`}
+      </span>
     </Link>
   )
 }

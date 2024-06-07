@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Ubuntu_Mono } from 'next/font/google';
+import { Prompt } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 
 import './globals.css';
@@ -9,7 +9,7 @@ import ThemeProvider from '@/utils/themeProvider';
 
 config.autoAddCss = false;
 
-const roboto = Ubuntu_Mono({
+const prompt = Prompt({
   weight: '400',
   subsets: ['latin'],
 })
@@ -28,7 +28,13 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://punn.dev/',
-    siteName: 'DevBlook'
+    siteName: 'Punn.dev',
+    images: {
+      url: 'https://punn.dev/images/og-image.png',
+      width: 1200,
+      height: 630,
+      type: 'image/png',
+    }
   },
 };
 
@@ -39,7 +45,7 @@ const RootLayout = ({
 }>) => {
   return (
     <html lang='en' suppressHydrationWarning>
-      <body className={roboto.className}>
+      <body className={prompt.className}>
         <Analytics />
         <ThemeProvider>
           {children}

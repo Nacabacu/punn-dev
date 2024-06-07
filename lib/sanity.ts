@@ -43,11 +43,11 @@ export const getPost = async (slug: string): Promise<Post> =>{
 
 export const getAllTags = async(): Promise<TagCount[]> => {
   const query = `
-  *[_type == "tag"] {
+  *[_type == 'tag' && count(*[_type == 'post' && references('tags', ^._id)]) > 0] {
     name,
     slug,
     _id,
-    "postCount": count(*[_type == "post" && references("tags", ^._id)])
+    'postCount': count(*[_type == 'post' && references('tags', ^._id)])
   }
   `;
 
@@ -57,7 +57,7 @@ export const getAllTags = async(): Promise<TagCount[]> => {
 
 export const getPostsByTag = async (tag: string): Promise<Post[]> => {
   const query = `
-  *[_type == "post" && references(*[_type == "tag" && slug.current == "${tag}"]._id)]{
+  *[_type == 'post' && references(*[_type == 'tag' && slug.current == '${tag}']._id)]{
     title,
     slug,
     publishedAt,

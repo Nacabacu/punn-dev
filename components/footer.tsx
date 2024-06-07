@@ -1,10 +1,12 @@
-'use client'
+'use client';
 
-import { useEffect, useState } from 'react';
-import { hasVerticalScroll } from '../utils/html';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUpLong } from '@fortawesome/free-solid-svg-icons';
 import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUpLong, faHashtag } from '@fortawesome/free-solid-svg-icons';
+import LinkWrapper from './linkWrapper';
+import { hasVerticalScroll } from '@/utils/html';
+import { TAG_URL } from '@/const';
 
 const Footer = () => {
   const [hasScroll, setHasScroll] = useState(false);
@@ -13,27 +15,32 @@ const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: 'smooth',
     });
   };
-  
+
   useEffect(() => {
-    setHasScroll(hasVerticalScroll());    
+    setHasScroll(hasVerticalScroll());
   }, [pathname]);
 
   return (
-    <footer className='text-center text-sm'>
-      {
-        hasScroll &&
-        <div className='flex justify-center py-8'>
-          <div className='space-x-2 cursor-pointer hover:text-primary dark:hover:text-primaryDark transition-colors' onClick={scrollToTop}>
-            <span className='text-lg'>Back to top</span>
-            <FontAwesomeIcon icon={faUpLong} />
-          </div>
+    <footer className='text-center text-sm flex w-full justify-center py-8 relative'>
+      {hasScroll && (
+        <div
+          className='absolute right-10 space-x-2 cursor-pointer hover:text-primary dark:hover:text-primaryDark transition-colors'
+          onClick={scrollToTop}
+        >
+          <span className='text-lg'>Back to top</span>
+          <FontAwesomeIcon icon={faUpLong} />
         </div>
-      }
+      )}
+      <span className='leading-7'>
+        <LinkWrapper url={TAG_URL}>
+          <FontAwesomeIcon icon={faHashtag} />
+        </LinkWrapper>
+      </span>
     </footer>
   );
-}
+};
 
 export default Footer;

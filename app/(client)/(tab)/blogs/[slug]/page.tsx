@@ -73,27 +73,29 @@ const BlogPage = async ({ params }: Params) => {
   }
 
   return (
-    <div className="flex flex-col items-center">
+    <>
       <Header title={post?.title} />
-      <div className="text-center max-w-full">
-        <span className={'text-primary dark:text-primaryDark'}>
-          {new Date(post?.publishedAt).toDateString()}
-        </span>
-        <div className="mt-5">
-          {post?.tags?.map((tag) => (
-            <TagButton key={tag?._id} name={tag?.name} slug={tag?.slug} />
-          ))}
-        </div>
-        <div className="mt-8 text-start prose prose-stone dark:prose-invert max-w-none 2xl:mx-96 xl:mx-64 lg:mx-48 md:mx-32 sm:mx-18 mx-10">
-          <PortableText
-            value={post?.body}
-            components={myPortableTextComponents}
-          />
-        </div>
+      <div className={'text-center text-primary dark:text-primaryDark'}>
+        {new Date(post?.publishedAt).toDateString()}
       </div>
-    </div>
+      <div className='text-center mt-4 mb-8'>
+        {post?.tags?.map((tag) => (
+          <TagButton key={tag?._id} name={tag?.name} slug={tag?.slug} />
+        ))}
+      </div>
+      <div
+        className='text-start max-w-full prose prose-stone dark:prose-invert
+        prose-p:text-lg prose-p:leading-8 prose-blockquote:text-lg prose-blockquote:leading-8
+        prose-li:text-lg prose-li:leading-8'
+      >
+        <PortableText
+          value={post?.body}
+          components={myPortableTextComponents}
+        />
+      </div>
+    </>
   );
-}
+};
 
 const myPortableTextComponents: Partial<PortableTextReactComponents> = {
   types: {
@@ -103,36 +105,34 @@ const myPortableTextComponents: Partial<PortableTextReactComponents> = {
         alt={value.alt as string}
         height={300}
         width={300}
-        className="m-auto"
+        className='m-auto'
       />
     ),
     code: ({ value }: PortableTextComponentProps<CodeInputValue>) => {
-      const { language = '' , code = '' } = value;
+      const { language = '', code = '', filename } = value;
       return (
-        <CodeHighlighter code={code} language={language} />
+        <CodeHighlighter code={code} language={language} filename={filename} />
       );
     },
   },
   marks: {
-    strong: ({ children }) => <strong>{children}</strong>,
-    em: ({ children }) => <em>{children}</em>,
-    underline: ({ children }) => <u>{children}</u>,
-    'strike-through': ({ children }) => <s>{children}</s>,
-    code: ({ children }) => <span className='p-1 bg-gray-400 dark:bg-gray-700 rounded-sm'>{children}</span>,
+    code: ({ children }) => (
+      <span className='p-1 bg-gray dark:bg-grayDark rounded-sm'>
+        {children}
+      </span>
+    ),
     link: ({ children, value }) => (
-      <a href={value.href} target="_blank" rel="noopener noreferrer">
+      <a href={value.href} target='_blank' rel='noopener noreferrer'>
         {children}
       </a>
     ),
   },
   block: {
-    h1: ({ children }) => <h1>{children}</h1>,
-    h2: ({ children }) => <h2>{children}</h2>,
-    h3: ({ children }) => <h3>{children}</h3>,
-    h4: ({ children }) => <h4>{children}</h4>,
-    h5: ({ children }) => <h5>{children}</h5>,
-    h6: ({ children }) => <h6>{children}</h6>,
-    normal: ({ children }) => <p>{children}</p>
+    blockquote: ({ children }) => (
+      <blockquote className='border-l-4 border-primary dark:border-primaryDark pl-4 py-4 bg-gray dark:bg-grayDark'>
+        {children}
+      </blockquote>
+    ),
   },
 };
 
