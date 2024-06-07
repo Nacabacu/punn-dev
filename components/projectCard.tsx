@@ -13,7 +13,7 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
-    <div className='p-4 rounded-md shadow-xl flex space-y-4 flex-col items-center h-full'>
+    <div className='p-4 rounded-md shadow-xl flex space-y-4 flex-col items-center'>
       <h2 className='text-xl'>{project.name}</h2>
       <LinkWrapper url={project.url} newtab>
         <Image
@@ -47,14 +47,5 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
     </div>
   );
 };
-
-{
-  /* <LinkWrapper url='https://genshin-planner.punn.dev' newtab>
-        <span className='text-xl flex items-center'>
-          Genshin Planner
-          <FontAwesomeIcon icon={faLink} className='ml-1' />
-        </span>
-      </LinkWrapper> */
-}
 
 export default ProjectCard;

@@ -25,10 +25,10 @@ const ThemeSwitch = () => {
 
   return (
     <button
-      className='text-primary dark:text-primaryDark'
+      className='flex items-center text-primary dark:text-primaryDark'
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
     >
-      <FontAwesomeIcon icon={theme === 'dark' ? faSun : faMoon} className='text-xl' />
+      <FontAwesomeIcon icon={theme === 'dark' ? faSun : faMoon} className='text-2xl' />
     </button>
   );
 };
