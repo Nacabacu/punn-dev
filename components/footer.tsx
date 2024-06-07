@@ -24,17 +24,17 @@ const Footer = () => {
   }, [pathname]);
 
   return (
-    <footer className='text-center text-sm flex w-full justify-center py-8 relative'>
+    <footer className='flex w-full justify-center py-8 relative'>
       {hasScroll && (
         <div
-          className='absolute right-10 space-x-2 cursor-pointer hover:text-primary dark:hover:text-primaryDark transition-colors'
+          className='items-center absolute right-10 leading-8 space-x-2 cursor-pointer hover:text-primary dark:hover:text-primaryDark transition-colors'
           onClick={scrollToTop}
         >
-          <span className='text-lg'>Back to top</span>
-          <FontAwesomeIcon icon={faUpLong} />
+          <span className='text-lg sm:inline hidden'>Back to top</span>
+          <FontAwesomeIcon className='' icon={faUpLong} />
         </div>
       )}
-      <span className='leading-7'>
+      <span className='leading-8'>
         <LinkWrapper url={TAG_URL}>
           <FontAwesomeIcon icon={faHashtag} />
         </LinkWrapper>

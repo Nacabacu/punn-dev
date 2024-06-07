@@ -10,8 +10,9 @@ const ThemeSwitch = () => {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    if (!theme) {
-      const matchMedia = window.matchMedia('(prefers-color-scheme: dark)');
+    const matchMedia = window.matchMedia('(prefers-color-scheme: dark)');
+
+    if (theme === 'system') {
       matchMedia.matches ? setTheme('dark') : setTheme('light');
     }
   

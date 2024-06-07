@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Header from '@/components/header';
-import PostItem from '@/components/postItem';
-import { getPosts } from '@/lib/sanity';
+import BlogCard from '@/components/blogCard';
+import { getAllPost } from '@/lib/sanity';
 
 export const revalidate = 60;
 
@@ -10,16 +10,17 @@ export const metadata: Metadata = {
 };
 
 const BlogPage = async () => {
-  const postList = await getPosts();
+  const postList = await getAllPost();
 
   return (
-    <div className='space-y-6'>
-      <Header title='All Blogs' />
-      {postList?.length > 0 &&
-        postList?.map((post) => (
-          <PostItem key={post.slug.current} post={post} />
+    <>
+      <Header title='All Posts' />
+      <div className='w-full grid md:grid-cols-2 grid-cols-1 gap-4'>
+        {postList?.map((post) => (
+          <BlogCard key={post.slug.current} post={post} />
         ))}
-    </div>
+      </div>
+    </>
   );
 };
 

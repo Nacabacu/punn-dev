@@ -1,7 +1,7 @@
 import Header from '@/components/header';
 import { getPostsByTag } from '@/lib/sanity';
 import { TAG_URL } from '@/const';
-import PostItem from '@/components/postItem';
+import BlogCard from '@/components/blogCard';
 
 interface Params {
   params: {
@@ -30,13 +30,14 @@ const TagPage = async ({ params }: Params) => {
   const postList = await getPostsByTag(params.slug);
 
   return (
-    <div className='space-y-6'>
+    <>
       <Header title={`#${params.slug}`} />
-      {postList?.length > 0 &&
-        postList?.map((post) => (
-          <PostItem key={post.slug.current} post={post} />
+      <div className='w-full grid md:grid-cols-2 grid-cols-1 gap-4'>
+        {postList?.map((post) => (
+          <BlogCard key={post.slug.current} post={post} />
         ))}
-    </div>
+      </div>
+    </>
   );
 };
 

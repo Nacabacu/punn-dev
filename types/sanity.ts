@@ -1,3 +1,5 @@
+import { Image } from 'sanity';
+
 export interface Post {
   title: string;
   slug: Slug;
@@ -20,4 +22,13 @@ export interface Tag {
 
 export interface TagCount extends Tag {
   postCount: number;
+}
+
+export interface Project {
+  name: string;
+  description: string;
+  url: string;
+  githubUrl: string;
+  image: string;
+  tags: Tag[];
 }

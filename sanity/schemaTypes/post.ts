@@ -22,6 +22,11 @@ export const post = defineType({
       validation: (Rule) => Rule.required().error('A slug is required.'),
     }),
     defineField({
+      name: 'image',
+      title: 'Image',
+      type: 'image',
+    }),
+    defineField({
       name: 'tags',
       title: 'Tags',
       type: 'array',

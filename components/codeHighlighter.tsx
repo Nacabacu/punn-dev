@@ -23,7 +23,7 @@ const CodeHighlighter = ({
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <div>
           {filename && (
-            <div className="w-fit px-2 py-1 bg-primary rounded-t dark:bg-primaryDark text-white">
+            <div className="w-fit px-2 py-1 bg-primary rounded-t dark:bg-primaryDark text-white text-sm">
               {filename}
             </div>
           )}

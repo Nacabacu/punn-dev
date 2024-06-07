@@ -8,10 +8,10 @@ const RootLayout = ({
 }>) => {
   return (
     <div className='flex flex-col min-h-screen'>
-      <section className='flex flex-col flex-grow transition-background-color bg-background dark:bg-backgroundDark'>
+      <main className='flex flex-col flex-grow transition-background-color bg-background dark:bg-backgroundDark'>
         <Navbar />
         {children}
-      </section>
+      </main>
       <Footer />
     </div>
   );

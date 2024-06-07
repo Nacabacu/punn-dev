@@ -84,7 +84,7 @@ const BlogPage = async ({ params }: Params) => {
         ))}
       </div>
       <div
-        className='text-start max-w-full prose prose-stone dark:prose-invert
+        className='text-start w-full prose prose-stone dark:prose-invert
         prose-p:text-lg prose-p:leading-8 prose-blockquote:text-lg prose-blockquote:leading-8
         prose-li:text-lg prose-li:leading-8'
       >
@@ -129,7 +129,7 @@ const myPortableTextComponents: Partial<PortableTextReactComponents> = {
   },
   block: {
     blockquote: ({ children }) => (
-      <blockquote className='border-l-4 border-primary dark:border-primaryDark pl-4 py-4 bg-gray dark:bg-grayDark'>
+      <blockquote className='border-l-4 border-primary dark:border-primaryDark p-4 bg-gray dark:bg-grayDark'>
         {children}
       </blockquote>
     ),

@@ -1,7 +1,7 @@
-import { Post, TagCount } from '@/types/sanity';
+import { Post, Project, TagCount } from '@/types/sanity';
 import { client } from '@/sanity/lib/client';
 
-export const getPosts = async (): Promise<Post[]> => {
+export const getAllPost = async (): Promise<Post[]> => {
   const query = `
   *[_type == 'post'] {
     title,
@@ -72,4 +72,24 @@ export const getPostsByTag = async (tag: string): Promise<Post[]> => {
 
   const posts = await client.fetch<Post[]>(query);
   return posts;
+}
+
+export const getAllProjects = async (): Promise<Project[]> => {
+  const query = `
+  *[_type == 'project'] {
+    name,
+    description,
+    url,
+    githubUrl,
+    'image': image.asset->url,
+    tags[]-> {
+      _id,
+      slug,
+      name
+    }
+  }
+  `;
+
+  const data = await client.fetch<Project[]>(query);
+  return data;
 }
