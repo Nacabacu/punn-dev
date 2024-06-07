@@ -1,20 +1,42 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss';
 
 const config: Config = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      typography: (theme: any) => ({
+        stone: {
+          css: {
+            '--tw-prose-bullets': '#78716c',
+            '--tw-prose-links': '#0070f3',
+            '--tw-prose-invert-links': '#ff7113',
+          },
+        },
+      }),
+      colors: {
+        background: '#c9d1d1',
+        backgroundDark: '#1a202c',
+        primary: '#0070f3',
+        primaryDark: '#ff7113',
+        secondary: '#003675',
+        secondaryDark: '#fa9450',
+        gray: '#9ca3af',
+        grayDark: '#374151',
       },
+      screens: {
+        xs: '420px',
+      },
+      transitionProperty: {
+        'background-color': 'background-color'
+      }
     },
   },
-  plugins: [],
+  darkMode: 'class',
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 };
 export default config;

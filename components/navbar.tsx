@@ -3,21 +3,43 @@
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
 import LinkWrapper from './linkWrapper';
+import ThemeSwitch from './themeSwitch';
+import { BLOGS_URL, HOME_URL, PROJECTS_URL } from '@/const';
 
-const HOME_PATH = '/';
-const PROJECTS_PATH = '/projects';
+const LINKS = [
+    {
+      name: 'Home',
+      url: HOME_URL,
+    },
+    {
+      name: 'Blogs',
+      url: BLOGS_URL,
+    },
+    {
+      name: 'Projects',
+      url: PROJECTS_URL,
+    },
+];
 
-export default function Navbar() {
+const Navbar = () => {
 	const pathname = usePathname();
 
   return (
-    <div className="flex justify-center gap-x-10 mb-10">
-      <LinkWrapper url={HOME_PATH}>
-				<span className={clsx('text-xl', { 'text-blue-500': pathname === HOME_PATH })}>Home</span>
-      </LinkWrapper>
-      <LinkWrapper url={PROJECTS_PATH}>
-        <span className={clsx('text-xl', { 'text-blue-500': pathname === PROJECTS_PATH })}>Projects</span>
-      </LinkWrapper>
-    </div>
+    <nav className='flex flex-col'>
+      <div className='flex justify-center gap-x-10 my-8 leading-7'>
+        {
+          LINKS.map(({ name, url }) => (
+            <LinkWrapper key={name} url={url}>
+              <span className={clsx('text-xl transition-colors', { 'text-primary dark:text-primaryDark': pathname === url })}>{name}</span>
+            </LinkWrapper>
+          ))
+        }
+      </div>
+      <div className='absolute top-8 xs:right-8 right-6 flex leading-7 items-center'>
+        <ThemeSwitch />
+      </div>
+    </nav>
   );
 }
+
+export default Navbar;

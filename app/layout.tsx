@@ -1,35 +1,58 @@
 import type { Metadata } from 'next';
-import { Ubuntu_Mono } from 'next/font/google';
+import { Prompt } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 
 import './globals.css';
-import Navbar from '@/components/navbar';
+import '@fortawesome/fontawesome-svg-core/styles.css';
+import { config } from '@fortawesome/fontawesome-svg-core';
+import ThemeProvider from '@/utils/themeProvider';
 
-const roboto = Ubuntu_Mono({
+config.autoAddCss = false;
+
+const prompt = Prompt({
   weight: '400',
   subsets: ['latin'],
 })
 
 export const metadata: Metadata = {
-  title: 'Punn',
-  description: 'Portfolio website of Punn',
-  keywords: ['Punn', 'Nararatwong', 'Punn Nararatwong', 'full stack developer', 'programmer', 'developer', 'portfolio'],
+  metadataBase: new URL('https://punn.dev/'),
+  title: {
+    default: 'Punn.dev',
+    template: '%s | Punn.dev'
+  },
+  keywords: ['Punn', 'Nararatwong', 'Punn Nararatwong', 'full stack developer', 'programmer', 'developer', 'portfolio', 'blog', 'development blog'],
+  description: 'Punn\'s blogs',
+  openGraph: {
+    title: 'Punn.dev',
+    description: 'Punn\'s blogs',
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://punn.dev/',
+    siteName: 'Punn.dev',
+    images: {
+      url: 'https://punn.dev/images/og-image.png',
+      width: 1200,
+      height: 630,
+      type: 'image/png',
+    }
+  },
 };
 
-export default function RootLayout({
+const RootLayout = ({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>) => {
   return (
-    <html lang="en">
-      <body className={roboto.className}>
+    <html lang='en' suppressHydrationWarning>
+      <body className={prompt.className}>
         <Analytics />
-        <div className="flex items-center mt-64 flex-col">
-          <Navbar />
+        <ThemeProvider>
           {children}
-        </div>
+        </ThemeProvider>
       </body>
     </html>
   );
 }
+
+export default RootLayout;
