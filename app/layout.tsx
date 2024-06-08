@@ -32,10 +32,10 @@ export const metadata: Metadata = {
     'blogs',
     'development blogs',
   ],
-  description: "Punn's Blogs",
+  description: "Punn's programming blogs",
   openGraph: {
     title: 'Punn.dev',
-    description: "Punn's Blogs",
+    description: "Punn's programming blogs",
     type: 'website',
     locale: 'en_US',
     url: 'https://punn.dev/',
