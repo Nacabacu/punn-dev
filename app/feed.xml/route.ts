@@ -25,7 +25,7 @@ export async function GET() {
       url: `${WEBSITE_URL}${BLOG_URL}/${post.slug.current}`,
       description: post.excerpt,
       date: post.publishedAt,
-      categories: post.tags.map((tag) => tag.name),
+      categories: post.tags?.map((tag) => tag.name),
     });
   });
 

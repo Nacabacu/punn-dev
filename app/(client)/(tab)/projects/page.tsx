@@ -13,7 +13,7 @@ const ProjectPage = async () => {
   return (
     <>
       <Header title="Projects" />
-      <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2">
+      <div className="grid w-full grid-cols-1 gap-4">
         {projects.map((project, index) => (
           <ProjectCard key={index} project={project} />
         ))}

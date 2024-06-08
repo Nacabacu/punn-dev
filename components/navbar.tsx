@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
 import LinkWrapper from './linkWrapper';
 import ThemeSwitch from './themeSwitch';
-import { BLOGS_URL, HOME_URL, PROJECTS_URL } from '@/const';
+import { BLOGS_URL, HOME_URL } from '@/const';
 import Webring from './webring';
 
 const LINKS = [
@@ -16,10 +16,10 @@ const LINKS = [
     name: 'Blogs',
     url: BLOGS_URL,
   },
-  {
-    name: 'Projects',
-    url: PROJECTS_URL,
-  },
+  // {
+  //   name: 'Projects',
+  //   url: PROJECTS_URL,
+  // },
 ];
 
 const Navbar = () => {
