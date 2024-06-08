@@ -4,9 +4,9 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUpLong, faHashtag } from '@fortawesome/free-solid-svg-icons';
-import LinkWrapper from './linkWrapper';
 import { hasVerticalScroll } from '@/utils/html';
 import { TAG_URL } from '@/const';
+import IconWrapper from './iconWrapper';
 
 const Footer = () => {
   const [hasScroll, setHasScroll] = useState(false);
@@ -35,9 +35,7 @@ const Footer = () => {
         </div>
       )}
       <span className='leading-8'>
-        <LinkWrapper url={TAG_URL}>
-          <FontAwesomeIcon icon={faHashtag} />
-        </LinkWrapper>
+        <IconWrapper url={TAG_URL} className='w-8 h-8' icon={faHashtag} />
       </span>
     </footer>
   );

@@ -1,7 +1,8 @@
 import Header from '@/components/header';
 import { getPostsByTag } from '@/lib/sanity';
-import { TAG_URL } from '@/const';
+import { DEFAULT_OG_IMAGE, TAG_URL } from '@/const';
 import BlogCard from '@/components/blogCard';
+import NotFound from './not-found';
 
 interface Params {
   params: {
@@ -22,12 +23,20 @@ export async function generateMetadata({ params }: Params) {
       locale: 'en_US',
       url: `https://punn.dev${TAG_URL}/${params.slug}`,
       siteName: 'Punn.dev',
+      images: {
+        url: DEFAULT_OG_IMAGE,
+        width: 1200,
+        height: 630,
+        type: 'image/png',
+      }
     },
   };
 }
 
 const TagPage = async ({ params }: Params) => {
   const postList = await getPostsByTag(params.slug);
+
+  if (!postList || postList.length === 0) { return NotFound(); }
 
   return (
     <>

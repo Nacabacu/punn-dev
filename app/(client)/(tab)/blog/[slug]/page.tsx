@@ -12,7 +12,7 @@ import { Post } from '@/types/sanity';
 import { urlForImage } from '@/sanity/lib/image';
 import Header from '@/components/header';
 import TagButton from '@/components/tagButton';
-import { BLOGS_URL } from '@/const';
+import { BLOG_URL, DEFAULT_OG_IMAGE } from '@/const';
 import { getPost } from '@/lib/sanity';
 import CodeHighlighter from '@/components/codeHighlighter';
 
@@ -40,25 +40,23 @@ export async function generateMetadata({
       description: post.excerpt,
       type: 'article',
       locale: 'en_US',
-      url: `https://punn.dev${BLOGS_URL}/${params.slug}`,
+      url: `https://punn.dev${BLOG_URL}/${params.slug}`,
       siteName: 'Punn.dev',
     },
   };
 
   const image = post?.body?.find((b: any) => b._type === 'image');
-  if (image) {
-    if (!metadata.openGraph) {
-      metadata.openGraph = {};
-    }
-
-    metadata.openGraph.images = [
-      {
-        url: urlForImage(image),
-        width: 1200,
-        height: 630,
-      },
-    ];
+  if (!metadata.openGraph) {
+    metadata.openGraph = {};
   }
+
+  metadata.openGraph.images = [
+    {
+      url: image ? urlForImage(image) : DEFAULT_OG_IMAGE,
+      width: 1200,
+      height: 630,
+    },
+  ];
 
   return metadata;
 }
@@ -66,7 +64,7 @@ export async function generateMetadata({
 export const revalidate = 60;
 
 const BlogPage = async ({ params }: Params) => {
-  const post: Post = await getPost(params?.slug);
+  const post = await getPost(params?.slug);
 
   if (!post) {
     return NotFound();

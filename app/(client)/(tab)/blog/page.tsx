@@ -6,7 +6,7 @@ import { getAllPost } from '@/lib/sanity';
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: 'Blogs',
+  title: 'Blog',
 };
 
 const BlogPage = async () => {

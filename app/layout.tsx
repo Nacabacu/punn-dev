@@ -6,6 +6,7 @@ import './globals.css';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import ThemeProvider from '@/utils/themeProvider';
+import { DEFAULT_OG_IMAGE } from '@/const';
 
 config.autoAddCss = false;
 
@@ -21,16 +22,16 @@ export const metadata: Metadata = {
     template: '%s | Punn.dev'
   },
   keywords: ['Punn', 'Nararatwong', 'Punn Nararatwong', 'full stack developer', 'programmer', 'developer', 'portfolio', 'blog', 'development blog'],
-  description: 'Punn\'s blogs',
+  description: 'Punn\'s blog',
   openGraph: {
     title: 'Punn.dev',
-    description: 'Punn\'s blogs',
+    description: 'Punn\'s blog',
     type: 'website',
     locale: 'en_US',
     url: 'https://punn.dev/',
     siteName: 'Punn.dev',
     images: {
-      url: 'https://punn.dev/images/og-image.png',
+      url: DEFAULT_OG_IMAGE,
       width: 1200,
       height: 630,
       type: 'image/png',

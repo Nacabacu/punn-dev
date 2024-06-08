@@ -1,11 +1,11 @@
 import Image from 'next/image';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
 
 import { Project } from '@/types/sanity';
 import TagButton from './tagButton';
 import LinkWrapper from './linkWrapper';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import IconWrapper from './iconWrapper';
 
 interface ProjectCardProps {
   project: Project;
@@ -31,17 +31,9 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
             <TagButton key={tag._id} name={tag.name} />
           ))}
         </span>
-        <span className='flex space-x-2'>
-          <LinkWrapper url={project.url} className='flex items-center' newtab>
-            <FontAwesomeIcon icon={faLink} className='ml-1 text-xl' />
-          </LinkWrapper>
-          <LinkWrapper
-            url={project.githubUrl}
-            className='flex items-center'
-            newtab
-          >
-            <FontAwesomeIcon icon={faGithub} className='ml-1 text-xl' />
-          </LinkWrapper>
+        <span className='flex items-center space-x-2'>
+          <IconWrapper url={project.url} className='w-7 h-7 ml-1 text-xl' icon={faLink} newtab />
+          <IconWrapper url={project.githubUrl} className='w-7 h-7 ml-1 text-xl' icon={faGithub} />
         </span>
       </div>
     </div>

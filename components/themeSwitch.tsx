@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
+import IconWrapper from './iconWrapper';
 
 const ThemeSwitch = () => {
   const { theme, setTheme } = useTheme();
@@ -25,10 +26,10 @@ const ThemeSwitch = () => {
 
   return (
     <button
-      className='flex items-center text-primary dark:text-primaryDark'
+      className='flex items-center sm:mr-8 mr-6 text-primary dark:text-primaryDark'
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
     >
-      <FontAwesomeIcon icon={theme === 'dark' ? faSun : faMoon} className='text-2xl' />
+      <IconWrapper icon={theme === 'dark' ? faSun : faMoon} className='w-8 h-8 text-2xl' />
     </button>
   );
 };

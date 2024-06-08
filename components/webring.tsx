@@ -23,14 +23,14 @@ const Webring = () => {
   }
 
   return (<a
-    className='xs:ml-8 ml-6'
+    className='sm:ml-8 ml-6'
     href='https://webring.wonderful.software#punn.dev'
     title='วงแหวนเว็บ'
   >
     <Image
       alt='วงแหวนเว็บ'
-      width='32'
-      height='32'
+      width='28'
+      height='28'
       src={`https://webring.wonderful.software/webring.${currentTheme === 'dark' ? 'white' : 'black'}.svg`}
     />
   </a>)

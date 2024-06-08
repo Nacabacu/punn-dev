@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next';
 import { Post, TagCount } from '@/types/sanity';
-import { TAG_URL, BLOGS_URL, PROJECTS_URL } from '@/const';
+import { TAG_URL, BLOG_URL, PROJECTS_URL } from '@/const';
 import { getAllTags, getAllPost } from '@/lib/sanity';
 
 export default async function sitemap():Promise<MetadataRoute.Sitemap> {
@@ -8,7 +8,7 @@ export default async function sitemap():Promise<MetadataRoute.Sitemap> {
   const tags: TagCount[] = await getAllTags();
 
   const postUrls = posts.map((post) => ({
-    url: `https://punn.dev${BLOGS_URL}/${post.slug.current}`,
+    url: `https://punn.dev${BLOG_URL}/${post.slug.current}`,
     lastModified: new Date(post.publishedAt),
   }))
 
@@ -24,7 +24,7 @@ export default async function sitemap():Promise<MetadataRoute.Sitemap> {
       priority: 1,
     },
     {
-      url: `https://punn.dev${BLOGS_URL}`,
+      url: `https://punn.dev${BLOG_URL}`,
       lastModified: new Date(),
       priority: 0.8,
     },

@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
 import LinkWrapper from './linkWrapper';
 import ThemeSwitch from './themeSwitch';
-import { BLOGS_URL, HOME_URL, PROJECTS_URL } from '@/const';
+import { BLOG_URL, HOME_URL, PROJECTS_URL } from '@/const';
 import Webring from './webring';
 
 const LINKS = [
@@ -13,8 +13,8 @@ const LINKS = [
     url: HOME_URL,
   },
   {
-    name: 'Blogs',
-    url: BLOGS_URL,
+    name: 'Blog',
+    url: BLOG_URL,
   },
   {
     name: 'Projects',
@@ -29,7 +29,7 @@ const Navbar = () => {
     <nav className='flex flex-col'>
       <div className='flex justify-center my-8 leading-7'>
         <Webring />
-        <span className='flex-1 flex gap-x-10 justify-center'>
+        <span className='flex-1 flex sm:gap-x-10 gap-x-6 justify-center'>
           {LINKS.map(({ name, url }) => (
             <LinkWrapper key={name} url={url}>
               <span
@@ -42,13 +42,8 @@ const Navbar = () => {
             </LinkWrapper>
           ))}
         </span>
-        <span className='flex xs:mr-8 mr-6 w-2'>
-          <ThemeSwitch />
-        </span>
+        <ThemeSwitch />
       </div>
-      {/* <div className='absolute top-9 xs:right-8 right-6 flex leading-7 items-center'>
-        
-      </div> */}
     </nav>
   );
 };
