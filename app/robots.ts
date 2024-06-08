@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next';
+import { WEBSITE_URL } from '@/const';
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -7,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/studio',
     },
-    sitemap: 'https://punn.dev/sitemap.xml',
+    sitemap: `${WEBSITE_URL}/sitemap.xml`,
   };
 }

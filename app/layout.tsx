@@ -6,7 +6,7 @@ import './globals.css';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import ThemeProvider from '@/utils/themeProvider';
-import { DEFAULT_OG_IMAGE } from '@/const';
+import { DEFAULT_OG_IMAGE, WEBSITE_URL } from '@/const';
 
 config.autoAddCss = false;
 
@@ -16,7 +16,7 @@ const prompt = Prompt({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://punn.dev/'),
+  metadataBase: new URL(WEBSITE_URL),
   title: {
     default: 'Punn.dev',
     template: 'Punn.dev | %s',
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     description: "Punn's programming blogs",
     type: 'website',
     locale: 'en_US',
-    url: 'https://punn.dev/',
+    url: WEBSITE_URL,
     siteName: 'Punn.dev',
     images: {
       url: DEFAULT_OG_IMAGE,

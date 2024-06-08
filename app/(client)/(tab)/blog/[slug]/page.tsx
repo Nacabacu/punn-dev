@@ -8,7 +8,7 @@ import { Post } from '@/types/sanity';
 import { urlForImage } from '@/sanity/lib/image';
 import Header from '@/components/header';
 import TagButton from '@/components/tagButton';
-import { BLOG_URL, DEFAULT_OG_IMAGE } from '@/const';
+import { BLOG_URL, DEFAULT_OG_IMAGE, WEBSITE_URL } from '@/const';
 import { getPost } from '@/lib/sanity';
 import CodeHighlighter from '@/components/codeHighlighter';
 
@@ -34,20 +34,18 @@ export async function generateMetadata({ params }: Params): Promise<Metadata | u
       description: post.excerpt,
       type: 'article',
       locale: 'en_US',
-      url: `https://punn.dev${BLOG_URL}/${params.slug}`,
+      url: `${WEBSITE_URL}${BLOG_URL}/${params.slug}`,
       siteName: 'Punn.dev',
     },
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const image = post?.body?.find((b: any) => b._type === 'image');
   if (!metadata.openGraph) {
     metadata.openGraph = {};
   }
 
   metadata.openGraph.images = [
     {
-      url: image ? urlForImage(image) : DEFAULT_OG_IMAGE,
+      url: post.ogImage ? urlForImage(post.ogImage) : DEFAULT_OG_IMAGE,
       width: 1200,
       height: 630,
     },

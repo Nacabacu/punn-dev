@@ -1,6 +1,6 @@
 import Header from '@/components/header';
 import { getPostsByTag } from '@/lib/sanity';
-import { DEFAULT_OG_IMAGE, TAG_URL } from '@/const';
+import { DEFAULT_OG_IMAGE, TAG_URL, WEBSITE_URL } from '@/const';
 import BlogCard from '@/components/blogCard';
 import NotFound from './not-found';
 
@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Params) {
       description: `Posts with the tag ${params.slug}`,
       type: 'website',
       locale: 'en_US',
-      url: `https://punn.dev${TAG_URL}/${params.slug}`,
+      url: `${WEBSITE_URL}${TAG_URL}/${params.slug}`,
       siteName: 'Punn.dev',
       images: {
         url: DEFAULT_OG_IMAGE,

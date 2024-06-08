@@ -5,7 +5,9 @@ export interface Post {
   slug: Slug;
   publishedAt: string;
   excerpt: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   body: any;
+  ogImage: Image;
   tags: Tag[];
   _id: string;
 }
