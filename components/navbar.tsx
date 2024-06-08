@@ -33,7 +33,7 @@ const Navbar = () => {
           {LINKS.map(({ name, url }) => (
             <LinkWrapper key={name} url={url}>
               <span
-                className={clsx('text-xl transition-colors', {
+                className={clsx('sm:text-xl text-lg transition-colors', {
                   'text-primary dark:text-primaryDark': pathname === url,
                 })}
               >
