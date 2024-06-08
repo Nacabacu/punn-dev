@@ -4,10 +4,10 @@ import NotFoundTemplate from '@/components/notFoundTemplate';
 
 const NotFound = () => {
   return (
-    <div className='flex items-center justify-center h-screen'>
-      <NotFoundTemplate notFoundMessage='404 Not Found :(' url={HOME_URL} icon={faHouseChimney} />
+    <div className="flex h-screen items-center justify-center">
+      <NotFoundTemplate notFoundMessage="404 Not Found :(" url={HOME_URL} icon={faHouseChimney} />
     </div>
   );
-}
+};
 
 export default NotFound;

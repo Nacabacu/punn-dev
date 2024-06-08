@@ -15,20 +15,14 @@ const TagButton = ({ name, slug, count }: TagProps) => {
 
   if (!slug)
     return (
-      <span
-        className='mr-2 p-1 rounded text-sm lowercase border
-    border-primary dark:border-primaryDark '
-      >
+      <span className="mr-2 rounded border border-primary p-1 text-sm lowercase dark:border-primaryDark">
         {formatText()}
       </span>
     );
 
   return (
     <Link href={`${TAG_URL}/${slug.current}`}>
-      <span
-        className='mr-2 p-1 rounded text-sm lowercase border transition-background-color 
-      border-primary dark:border-primaryDark hover:text-white hover:bg-primary dark:hover:bg-primaryDark'
-      >
+      <span className="mr-2 rounded border border-primary p-1 text-sm lowercase transition-background-color hover:bg-primary hover:text-white dark:border-primaryDark dark:hover:bg-primaryDark">
         {formatText()}
       </span>
     </Link>

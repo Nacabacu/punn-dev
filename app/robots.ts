@@ -8,5 +8,5 @@ export default function robots(): MetadataRoute.Robots {
       disallow: '/studio',
     },
     sitemap: 'https://punn.dev/sitemap.xml',
-  }
+  };
 }

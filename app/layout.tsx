@@ -13,19 +13,29 @@ config.autoAddCss = false;
 const prompt = Prompt({
   weight: '400',
   subsets: ['latin'],
-})
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://punn.dev/'),
   title: {
     default: 'Punn.dev',
-    template: 'Punn.dev | %s'
+    template: 'Punn.dev | %s',
   },
-  keywords: ['Punn', 'Nararatwong', 'Punn Nararatwong', 'full stack developer', 'programmer', 'developer', 'portfolio', 'blogs', 'development blogs'],
-  description: 'Punn\'s Blogs',
+  keywords: [
+    'Punn',
+    'Nararatwong',
+    'Punn Nararatwong',
+    'full stack developer',
+    'programmer',
+    'developer',
+    'portfolio',
+    'blogs',
+    'development blogs',
+  ],
+  description: "Punn's Blogs",
   openGraph: {
     title: 'Punn.dev',
-    description: 'Punn\'s Blogs',
+    description: "Punn's Blogs",
     type: 'website',
     locale: 'en_US',
     url: 'https://punn.dev/',
@@ -35,7 +45,7 @@ export const metadata: Metadata = {
       width: 1200,
       height: 630,
       type: 'image/png',
-    }
+    },
   },
 };
 
@@ -45,15 +55,13 @@ const RootLayout = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <html lang='en' suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <body className={prompt.className}>
         <Analytics />
-        <ThemeProvider>
-          {children}
-        </ThemeProvider>
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );
-}
+};
 
 export default RootLayout;

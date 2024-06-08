@@ -19,8 +19,8 @@ const CopyCodeButton = ({ code }: CopyCodeButtonProps) => {
   return (
     <CopyToClipboard text={code} onCopy={handleCopy}>
       <button
-        className='absolute top-2 right-2 rounded-md px-2 py-1 transition-colors bg-background dark:bg-backgroundDark hover:bg-primary dark:hover:bg-primaryDark'
-        title='Copy to clipboard'
+        className="absolute right-2 top-2 rounded-md bg-background px-2 py-1 transition-colors hover:bg-primary dark:bg-backgroundDark dark:hover:bg-primaryDark"
+        title="Copy to clipboard"
       >
         {copied ? <FontAwesomeIcon icon={faCopied} /> : <FontAwesomeIcon icon={faCopy} />}
       </button>

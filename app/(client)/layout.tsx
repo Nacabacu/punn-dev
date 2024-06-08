@@ -7,8 +7,8 @@ const RootLayout = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <div className='flex flex-col min-h-screen'>
-      <main className='flex flex-col flex-grow transition-background-color bg-background dark:bg-backgroundDark'>
+    <div className="flex min-h-screen flex-col">
+      <main className="flex flex-grow flex-col bg-background transition-background-color dark:bg-backgroundDark">
         <Navbar />
         {children}
       </main>

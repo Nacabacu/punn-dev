@@ -1,4 +1,4 @@
-import { defineField, defineType } from 'sanity'
+import { defineField, defineType } from 'sanity';
 
 export const post = defineType({
   name: 'post',
@@ -37,7 +37,7 @@ export const post = defineType({
       name: 'tags',
       title: 'Tags',
       type: 'array',
-      of: [{type: 'reference', to: {type: 'tag'}}],
+      of: [{ type: 'reference', to: { type: 'tag' } }],
     }),
     defineField({
       name: 'publishedAt',
@@ -66,7 +66,7 @@ export const post = defineType({
       return {
         title,
         subtitle: new Date(publishedAt).toLocaleDateString(),
-      }
+      };
     },
   },
-})
+});

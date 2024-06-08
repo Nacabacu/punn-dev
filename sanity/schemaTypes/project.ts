@@ -1,4 +1,4 @@
-import { defineField, defineType } from 'sanity'
+import { defineField, defineType } from 'sanity';
 
 export const project = defineType({
   name: 'project',
@@ -15,7 +15,7 @@ export const project = defineType({
       name: 'description',
       title: 'Description',
       type: 'text',
-      validation: (Rule) => Rule.required().error('Description is required.')
+      validation: (Rule) => Rule.required().error('Description is required.'),
     }),
     defineField({
       name: 'url',

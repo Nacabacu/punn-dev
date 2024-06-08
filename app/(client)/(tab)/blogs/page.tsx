@@ -14,11 +14,9 @@ const BlogPage = async () => {
 
   return (
     <>
-      <Header title='All Blogs' />
-      <div className='w-full grid md:grid-cols-2 grid-cols-1 gap-4'>
-        {postList?.map((post) => (
-          <BlogCard key={post.slug.current} post={post} />
-        ))}
+      <Header title="All Blogs" />
+      <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2">
+        {postList?.map((post) => <BlogCard key={post.slug.current} post={post} />)}
       </div>
     </>
   );

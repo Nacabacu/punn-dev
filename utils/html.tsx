@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 const PRESERVED_OFFSET = 100;
 

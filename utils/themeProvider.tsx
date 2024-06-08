@@ -8,7 +8,11 @@ interface ThemProviderProps {
 }
 
 const ThemeProvider = ({ children }: ThemProviderProps) => {
-  return <NextThemeProvider defaultTheme='system' attribute='class'>{children}</NextThemeProvider>;
+  return (
+    <NextThemeProvider defaultTheme="system" attribute="class">
+      {children}
+    </NextThemeProvider>
+  );
 };
 
 export default ThemeProvider;

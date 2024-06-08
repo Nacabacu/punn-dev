@@ -1,10 +1,7 @@
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
-  content: [
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
+  content: ['./components/**/*.{js,ts,jsx,tsx,mdx}', './app/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
       typography: (theme: any) => ({
@@ -30,13 +27,11 @@ const config: Config = {
         xs: '420px',
       },
       transitionProperty: {
-        'background-color': 'background-color'
-      }
+        'background-color': 'background-color',
+      },
     },
   },
   darkMode: 'class',
-  plugins: [
-    require('@tailwindcss/typography'),
-  ],
+  plugins: [require('@tailwindcss/typography')],
 };
 export default config;

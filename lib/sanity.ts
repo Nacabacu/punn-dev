@@ -18,9 +18,9 @@ export const getAllPost = async (): Promise<Post[]> => {
 
   const data = await client.fetch<Post[]>(query);
   return data;
-}
+};
 
-export const getPost = async (slug: string): Promise<Post> =>{
+export const getPost = async (slug: string): Promise<Post> => {
   const query = `
   *[_type == 'post' && slug.current == '${slug}'][0] {
     title,
@@ -39,9 +39,9 @@ export const getPost = async (slug: string): Promise<Post> =>{
 
   const data = await client.fetch<Post>(query);
   return data;
-}
+};
 
-export const getAllTags = async(): Promise<TagCount[]> => {
+export const getAllTags = async (): Promise<TagCount[]> => {
   const query = `
   *[_type == 'tag' && count(*[_type == 'post' && references('tags', ^._id)]) > 0] {
     name,
@@ -53,7 +53,7 @@ export const getAllTags = async(): Promise<TagCount[]> => {
 
   const tags = client.fetch<TagCount[]>(query);
   return tags;
-}
+};
 
 export const getPostsByTag = async (tag: string): Promise<Post[]> => {
   const query = `
@@ -72,7 +72,7 @@ export const getPostsByTag = async (tag: string): Promise<Post[]> => {
 
   const posts = await client.fetch<Post[]>(query);
   return posts;
-}
+};
 
 export const getAllProjects = async (): Promise<Project[]> => {
   const query = `
@@ -92,4 +92,4 @@ export const getAllProjects = async (): Promise<Project[]> => {
 
   const data = await client.fetch<Project[]>(query);
   return data;
-}
+};

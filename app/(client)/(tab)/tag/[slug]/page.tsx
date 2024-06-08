@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: Params) {
         width: 1200,
         height: 630,
         type: 'image/png',
-      }
+      },
     },
   };
 }
@@ -36,15 +36,15 @@ export async function generateMetadata({ params }: Params) {
 const TagPage = async ({ params }: Params) => {
   const postList = await getPostsByTag(params.slug);
 
-  if (!postList || postList.length === 0) { return NotFound(); }
+  if (!postList || postList.length === 0) {
+    return NotFound();
+  }
 
   return (
     <>
       <Header title={`#${params.slug}`} />
-      <div className='w-full grid md:grid-cols-2 grid-cols-1 gap-4'>
-        {postList?.map((post) => (
-          <BlogCard key={post.slug.current} post={post} />
-        ))}
+      <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2">
+        {postList?.map((post) => <BlogCard key={post.slug.current} post={post} />)}
       </div>
     </>
   );

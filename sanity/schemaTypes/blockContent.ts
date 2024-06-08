@@ -63,7 +63,7 @@ export const blockContent = defineType({
       type: 'code',
       options: {
         withFilename: true,
-      }
+      },
     }),
   ],
 });

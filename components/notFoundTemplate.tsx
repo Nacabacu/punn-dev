@@ -5,19 +5,19 @@ import IconWrapper from './iconWrapper';
 interface NotFoundProps {
   notFoundMessage: string;
   url: string;
-  icon?: IconDefinition
+  icon?: IconDefinition;
 }
 
 const NotFoundTemplate = ({ notFoundMessage, url, icon }: NotFoundProps) => {
   return (
-    <div className='flex flex-col flex-grow justify-center items-center bg-background dark:bg-backgroundDark'>
-      <div className='font-extrabold text-2xl text-primary dark:text-primaryDark'>
-        { notFoundMessage }
+    <div className="flex flex-grow flex-col items-center justify-center bg-background dark:bg-backgroundDark">
+      <div className="text-2xl font-extrabold text-primary dark:text-primaryDark">
+        {notFoundMessage}
       </div>
       <LinkWrapper url={url}>
-        <div className='text-xl mt-8 flex items-center space-x-2'>
+        <div className="mt-8 flex items-center space-x-2 text-xl">
           <span>Back to Blog</span>
-          { icon && <IconWrapper className='w-7 h-7 text-xl' icon={icon} />}
+          {icon && <IconWrapper className="h-7 w-7 text-xl" icon={icon} />}
         </div>
       </LinkWrapper>
     </div>

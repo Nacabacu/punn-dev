@@ -4,13 +4,10 @@ interface HeaderProps {
 
 const Header = ({ title }: HeaderProps) => {
   return (
-    <header className='flex flex-col justify-center border-b border-dashed border-primary
-     dark:border-primaryDark w-full pb-8 mb-8 border-opacity-50'>
-      <h2 className='sm:text-4xl text-3xl font-extrabold text-center'>
-        {title}
-      </h2>
+    <header className="mb-8 flex w-full flex-col justify-center border-b border-dashed border-primary border-opacity-50 pb-8 dark:border-primaryDark">
+      <h2 className="text-center text-3xl font-extrabold sm:text-4xl">{title}</h2>
     </header>
   );
-}
+};
 
 export default Header;

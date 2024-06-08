@@ -26,14 +26,14 @@ const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <nav className='flex flex-col'>
-      <div className='flex justify-center my-8 leading-7'>
+    <nav className="flex flex-col">
+      <div className="my-8 flex justify-center leading-7">
         <Webring />
-        <span className='flex-1 flex sm:gap-x-10 gap-x-6 justify-center'>
+        <span className="flex flex-1 justify-center gap-x-6 sm:gap-x-10">
           {LINKS.map(({ name, url }) => (
             <LinkWrapper key={name} url={url}>
               <span
-                className={clsx('sm:text-xl text-lg transition-colors', {
+                className={clsx('text-lg transition-colors sm:text-xl', {
                   'text-primary dark:text-primaryDark': pathname === url,
                 })}
               >
