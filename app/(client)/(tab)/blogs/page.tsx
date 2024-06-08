@@ -6,7 +6,7 @@ import { getAllPost } from '@/lib/sanity';
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: 'Blog',
+  title: 'Blogs',
 };
 
 const BlogPage = async () => {
@@ -14,7 +14,7 @@ const BlogPage = async () => {
 
   return (
     <>
-      <Header title='All Posts' />
+      <Header title='All Blogs' />
       <div className='w-full grid md:grid-cols-2 grid-cols-1 gap-4'>
         {postList?.map((post) => (
           <BlogCard key={post.slug.current} post={post} />

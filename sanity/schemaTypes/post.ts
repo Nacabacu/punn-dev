@@ -25,6 +25,13 @@ export const post = defineType({
       name: 'image',
       title: 'Image',
       type: 'image',
+      fields: [
+        defineField({
+          name: 'caption',
+          title: 'Caption',
+          type: 'string',
+        }),
+      ],
     }),
     defineField({
       name: 'tags',

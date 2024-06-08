@@ -127,7 +127,7 @@ const myPortableTextComponents: Partial<PortableTextReactComponents> = {
   },
   block: {
     blockquote: ({ children }) => (
-      <blockquote className='border-l-4 border-primary dark:border-primaryDark p-4 bg-gray dark:bg-grayDark'>
+      <blockquote className='border-l-4 border-primary dark:border-primaryDark p-4'>
         {children}
       </blockquote>
     ),

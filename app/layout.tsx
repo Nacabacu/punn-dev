@@ -19,13 +19,13 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://punn.dev/'),
   title: {
     default: 'Punn.dev',
-    template: '%s | Punn.dev'
+    template: 'Punn.dev | %s'
   },
-  keywords: ['Punn', 'Nararatwong', 'Punn Nararatwong', 'full stack developer', 'programmer', 'developer', 'portfolio', 'blog', 'development blog'],
-  description: 'Punn\'s Blog',
+  keywords: ['Punn', 'Nararatwong', 'Punn Nararatwong', 'full stack developer', 'programmer', 'developer', 'portfolio', 'blogs', 'development blogs'],
+  description: 'Punn\'s Blogs',
   openGraph: {
     title: 'Punn.dev',
-    description: 'Punn\'s Blog',
+    description: 'Punn\'s Blogs',
     type: 'website',
     locale: 'en_US',
     url: 'https://punn.dev/',

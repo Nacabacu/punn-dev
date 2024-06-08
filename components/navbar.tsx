@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
 import LinkWrapper from './linkWrapper';
 import ThemeSwitch from './themeSwitch';
-import { BLOG_URL, HOME_URL, PROJECTS_URL } from '@/const';
+import { BLOGS_URL, HOME_URL, PROJECTS_URL } from '@/const';
 import Webring from './webring';
 
 const LINKS = [
@@ -13,8 +13,8 @@ const LINKS = [
     url: HOME_URL,
   },
   {
-    name: 'Blog',
-    url: BLOG_URL,
+    name: 'Blogs',
+    url: BLOGS_URL,
   },
   {
     name: 'Projects',
