@@ -31,18 +31,18 @@ export const blockContent = defineType({
           { title: 'Code', value: 'code' },
         ],
         annotations: [
-          {
+          defineField({
             title: 'URL',
             name: 'link',
             type: 'object',
             fields: [
-              {
+              defineField({
                 title: 'URL',
                 name: 'href',
                 type: 'url',
-              },
+              }),
             ],
-          },
+          }),
         ],
       },
     }),
@@ -50,11 +50,11 @@ export const blockContent = defineType({
       type: 'image',
       options: { hotspot: true },
       fields: [
-        {
-          title: 'Alternative Text',
-          name: 'alt',
+        defineField({
+          name: 'caption',
+          title: 'Caption',
           type: 'string',
-        },
+        }),
       ],
     }),
     defineField({

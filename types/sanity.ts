@@ -7,8 +7,8 @@ export interface Post {
   excerpt: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   body: any;
-  ogImage: Image;
-  tags: Tag[];
+  ogImage?: Image;
+  tags?: Tag[];
   _id: string;
 }
 

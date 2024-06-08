@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { Prompt } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 
 import './globals.css';
@@ -9,11 +8,6 @@ import ThemeProvider from '@/utils/themeProvider';
 import { DEFAULT_OG_IMAGE, WEBSITE_URL } from '@/const';
 
 config.autoAddCss = false;
-
-const prompt = Prompt({
-  weight: '400',
-  subsets: ['latin'],
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(WEBSITE_URL),
@@ -56,7 +50,7 @@ const RootLayout = ({
 }>) => {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={prompt.className}>
+      <body>
         <Analytics />
         <ThemeProvider>{children}</ThemeProvider>
       </body>

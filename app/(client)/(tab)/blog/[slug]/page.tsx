@@ -58,6 +58,14 @@ export const revalidate = 60;
 
 const BlogPage = async ({ params }: Params) => {
   const post = await getPost(params?.slug);
+  const proseBaseStyle = 'prose prose-stone  dark:prose-invert';
+  const prosePTagStyle =
+    'prose-p:text-md prose-p:leading-7 sm:prose-p:text-lg sm:prose-p:leading-8';
+  const proseBlockquoteStyle =
+    'prose-blockquote:text-md prose-blockquote:leading-7 sm:prose-blockquote:text-lg sm:prose-blockquote:leading-8';
+  const proseLiStyle =
+    'prose-li:text-md prose-li:leading-sm7 :prose-li:text-lg sm:prose-li:leading-8';
+  const portableTextStyle = `w-full text-start ${proseBaseStyle} ${prosePTagStyle} ${proseBlockquoteStyle} ${proseLiStyle}`;
 
   if (!post) {
     return NotFound();
@@ -72,7 +80,7 @@ const BlogPage = async ({ params }: Params) => {
       <div className="mb-8 mt-4 text-center">
         {post?.tags?.map((tag) => <TagButton key={tag?._id} name={tag?.name} slug={tag?.slug} />)}
       </div>
-      <div className="prose prose-stone w-full text-start dark:prose-invert prose-p:text-lg prose-p:leading-8 prose-blockquote:text-lg prose-blockquote:leading-8 prose-li:text-lg prose-li:leading-8">
+      <div className={portableTextStyle}>
         <PortableText value={post?.body} components={myPortableTextComponents} />
       </div>
     </>
@@ -97,7 +105,7 @@ const myPortableTextComponents: Partial<PortableTextReactComponents> = {
   },
   marks: {
     code: ({ children }) => (
-      <span className="rounded-sm bg-gray p-1 dark:bg-grayDark">{children}</span>
+      <span className="rounded-sm bg-gray p-0.5 dark:bg-grayDark">{children}</span>
     ),
     link: ({ children, value }) => (
       <a href={value.href} target="_blank" rel="noopener noreferrer">
