@@ -6,7 +6,7 @@ import { getAllPost } from '@/lib/sanity';
 export async function GET() {
   const feedOptions: RSS.FeedOptions = {
     title: 'Punn.dev',
-    description: 'Punn\'s programming blogs',
+    description: "Punn's programming blogs",
     site_url: WEBSITE_URL,
     feed_url: `${WEBSITE_URL}/rss.xml`,
     image_url: `${WEBSITE_URL}/default-og.png`,
@@ -28,7 +28,6 @@ export async function GET() {
       categories: post.tags?.map((tag) => tag.name),
     });
   });
-
 
   return new NextResponse(feed.xml(), {
     headers: {

@@ -7,7 +7,6 @@ export const getAllPost = async (): Promise<Post[]> => {
     title,
     slug,
     publishedAt,
-    ogImage,
     excerpt,
     tags[]-> {
       _id,
@@ -27,7 +26,6 @@ export const getPost = async (slug: string): Promise<Post> => {
     title,
     slug,
     publishedAt,
-    ogImage,
     excerpt,
     _id,
     body,

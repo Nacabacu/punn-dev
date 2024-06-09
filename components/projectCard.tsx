@@ -28,7 +28,12 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         </div>
         <span className="flex items-center space-x-2">
           <IconWrapper url={project.url} className="ml-1 h-7 w-7 text-xl" icon={faLink} newtab />
-          <IconWrapper url={project.githubUrl} className="ml-1 h-7 w-7 text-xl" icon={faGithub} newtab />
+          <IconWrapper
+            url={project.githubUrl}
+            className="ml-1 h-7 w-7 text-xl"
+            icon={faGithub}
+            newtab
+          />
         </span>
         {/* <p className="text line-clamp-1 text-left">{project.description}</p> */}
         {/* <div className="flex flex-wrap">

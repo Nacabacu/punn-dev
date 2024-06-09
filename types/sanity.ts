@@ -1,5 +1,3 @@
-import { Image } from 'sanity';
-
 export interface Post {
   title: string;
   slug: Slug;
@@ -7,7 +5,6 @@ export interface Post {
   excerpt: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   body: any;
-  ogImage?: Image;
   tags?: Tag[];
   _id: string;
 }

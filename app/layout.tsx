@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import './globals.css';
 import '@fortawesome/fontawesome-svg-core/styles.css';
@@ -52,6 +53,7 @@ const RootLayout = ({
     <html lang="en" suppressHydrationWarning>
       <body>
         <Analytics />
+        <SpeedInsights />
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>

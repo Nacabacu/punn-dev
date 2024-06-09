@@ -4,7 +4,7 @@ const config: Config = {
   content: ['./components/**/*.{js,ts,jsx,tsx,mdx}', './app/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
-      typography: (theme: any) => ({
+      typography: () => ({
         stone: {
           css: {
             '--tw-prose-bullets': '#78716c',

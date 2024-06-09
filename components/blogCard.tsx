@@ -18,7 +18,9 @@ const BlogCard = ({ post }: BlogCardProps) => {
         <p className="line-clamp-2 min-h-14 leading-7">{post?.excerpt}</p>
       </Link>
 
-      <div className={post.tags && 'mt-3'}>{post.tags?.map((tag) => <Tag key={tag._id} name={tag?.name} slug={tag?.slug} />)}</div>
+      <div className={post.tags && 'mt-3'}>
+        {post.tags?.map((tag) => <Tag key={tag._id} name={tag?.name} slug={tag?.slug} />)}
+      </div>
     </div>
   );
 };
