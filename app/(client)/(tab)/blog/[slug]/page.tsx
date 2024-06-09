@@ -37,10 +37,10 @@ export async function generateMetadata({ params }: Params): Promise<Metadata | u
       url: `${WEBSITE_URL}${BLOG_URL}/${params.slug}`,
       siteName: 'Punn.dev',
       images: {
-          url: `${WEBSITE_URL}/api/og/${params.slug}`,
-          width: 1200,
-          height: 630,
-        }
+        url: `${WEBSITE_URL}/api/og/${params.slug}`,
+        width: 1200,
+        height: 630,
+      },
     },
   };
 

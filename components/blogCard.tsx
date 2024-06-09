@@ -9,7 +9,7 @@ interface BlogCardProps {
 
 const BlogCard = ({ post }: BlogCardProps) => {
   return (
-    <div className="flex flex-col rounded-md p-4 shadow-md transition-all hover:bg-secondary hover:text-white dark:shadow-lg dark:hover:bg-backgroundDark dark:hover:shadow-2xl">
+    <div className="flex flex-col rounded-md p-4 shadow-md transition-all hover:shadow-2xl dark:shadow-lg dark:hover:shadow-2xl">
       <Link href={`${BLOG_URL}/${post?.slug?.current}`}>
         <h2 className={'line-clamp-2 text-xl'}>{post?.title}</h2>
         <p className={'my-1 text-sm text-primary dark:text-primaryDark'}>

@@ -7,7 +7,7 @@ const nextConfig = {
         destination: '/api/feed',
         permanent: true,
       },
-    ]
+    ];
   },
   images: {
     remotePatterns: [
