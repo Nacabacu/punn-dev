@@ -8,7 +8,7 @@ export async function GET() {
     title: 'Punn.dev',
     description: "Punn's programming blogs",
     site_url: WEBSITE_URL,
-    feed_url: `${WEBSITE_URL}/rss.xml`,
+    feed_url: `${WEBSITE_URL}/api/feed`,
     image_url: `${WEBSITE_URL}/default-og.png`,
     pubDate: new Date(),
     copyright: `All rights reserved ${new Date().getFullYear()}`,
