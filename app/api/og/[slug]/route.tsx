@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unknown-property */
-import { ImageResponse } from 'next/og';
 import { getPost } from '@/lib/sanity';
+import { ImageResponse } from 'next/og';
 
 export async function GET(_request: Request, { params }: { params: { slug: string } }) {
   const { slug } = params;

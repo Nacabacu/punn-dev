@@ -13,7 +13,7 @@ const CodeHighlighter = ({ code, language, filename }: CodeHighlighterProps) => 
   return (
     <Highlight language={language || 'javascript'} code={code || ''} theme={themes.oneDark}>
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <div>
+        <div className="max-w-[95vw] m-auto">
           {filename && (
             <div className="w-fit rounded-t bg-primary px-2 py-1 text-sm text-white dark:bg-primaryDark">
               {filename}

@@ -1,17 +1,18 @@
-import { Metadata } from 'next';
-import Image from 'next/image';
-import { PortableText, PortableTextComponentProps, PortableTextReactComponents } from 'next-sanity';
-import { Image as SanityImage } from 'sanity';
 import { CodeInputValue } from '@sanity/code-input';
+import { Metadata } from 'next';
+import { PortableText, PortableTextComponentProps, PortableTextReactComponents } from 'next-sanity';
+import Image from 'next/image';
+import { Image as SanityImage } from 'sanity';
 
-import { Post } from '@/types/sanity';
-import { urlForImage } from '@/sanity/lib/image';
+import CodeHighlighter from '@/components/codeHighlighter';
 import Header from '@/components/header';
 import TagButton from '@/components/tagButton';
 import { BLOG_URL, WEBSITE_URL } from '@/const';
 import { getPost } from '@/lib/sanity';
-import CodeHighlighter from '@/components/codeHighlighter';
+import { urlForImage } from '@/sanity/lib/image';
+import { MermaidDiagramProps, Post } from '@/types/sanity';
 
+import MermaidRenderer from '@/components/mermaidRenderer';
 import NotFound from '../not-found';
 
 interface Params {
@@ -57,7 +58,7 @@ const BlogPage = async ({ params }: Params) => {
   const proseBlockquoteStyle =
     'prose-blockquote:text-md prose-blockquote:leading-7 sm:prose-blockquote:text-lg sm:prose-blockquote:leading-8';
   const proseLiStyle =
-    'prose-li:text-md prose-li:leading-sm7 :prose-li:text-lg sm:prose-li:leading-8';
+    'prose-li:text-md prose-li:leading-7 sm:prose-li:text-lg sm:prose-li:leading-8';
   const portableTextStyle = `w-full text-start ${proseBaseStyle} ${prosePTagStyle} ${proseBlockquoteStyle} ${proseLiStyle}`;
 
   if (!post) {
@@ -95,6 +96,9 @@ const myPortableTextComponents: Partial<PortableTextReactComponents> = {
       const { language = '', code = '', filename } = value;
       return <CodeHighlighter code={code} language={language} filename={filename} />;
     },
+    mermaidDiagram: ({ value }: PortableTextComponentProps<MermaidDiagramProps>) => (
+      <MermaidRenderer diagram={value.diagram} />
+    ),
   },
   marks: {
     code: ({ children }) => (

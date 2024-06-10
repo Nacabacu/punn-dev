@@ -1,10 +1,10 @@
 'use client';
 
-import { usePathname } from 'next/navigation';
+import { BLOGS_URL, HOME_URL } from '@/const';
 import clsx from 'clsx';
+import { usePathname } from 'next/navigation';
 import LinkWrapper from './linkWrapper';
 import ThemeSwitch from './themeSwitch';
-import { BLOGS_URL, HOME_URL } from '@/const';
 import Webring from './webring';
 
 const LINKS = [

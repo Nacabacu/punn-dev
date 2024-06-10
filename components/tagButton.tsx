@@ -1,6 +1,6 @@
-import Link from 'next/link';
-import { Slug } from '@/types/sanity';
 import { TAG_URL } from '@/const';
+import { Slug } from '@/types/sanity';
+import Link from 'next/link';
 
 interface TagProps {
   name: string;

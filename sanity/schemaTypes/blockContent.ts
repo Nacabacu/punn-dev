@@ -1,4 +1,4 @@
-import { defineType, defineArrayMember, defineField } from 'sanity';
+import { defineArrayMember, defineField, defineType } from 'sanity';
 
 export const blockContent = defineType({
   title: 'Block Content',
@@ -65,5 +65,20 @@ export const blockContent = defineType({
         withFilename: true,
       },
     }),
+    defineArrayMember(
+      defineType({
+        name: 'mermaidDiagram',
+        title: 'Mermaid Diagram',
+        type: 'object',
+        fields: [
+          {
+            name: 'diagram',
+            title: 'Diagram',
+            type: 'text',
+            description: 'Enter your Mermaid diagram code here',
+          },
+        ],
+      }),
+    ),
   ],
 });

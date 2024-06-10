@@ -1,7 +1,7 @@
-import Header from '@/components/header';
-import { getPostsByTag } from '@/lib/sanity';
-import { DEFAULT_OG_IMAGE, TAG_URL, WEBSITE_URL } from '@/const';
 import BlogCard from '@/components/blogCard';
+import Header from '@/components/header';
+import { DEFAULT_OG_IMAGE, TAG_URL, WEBSITE_URL } from '@/const';
+import { getPostsByTag } from '@/lib/sanity';
 import NotFound from './not-found';
 
 interface Params {

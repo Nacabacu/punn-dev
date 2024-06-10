@@ -1,6 +1,5 @@
-import React from 'react';
-import { BLOGS_URL } from '@/const';
 import NotFoundTemplate from '@/components/notFoundTemplate';
+import { BLOGS_URL } from '@/const';
 
 const NotFound = () => {
   return (

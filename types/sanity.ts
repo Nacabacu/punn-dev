@@ -31,3 +31,8 @@ export interface Project {
   image: string;
   tags: Tag[];
 }
+
+export interface MermaidDiagramProps {
+  _type: string;
+  diagram: string;
+}

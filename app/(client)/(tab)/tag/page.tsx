@@ -1,8 +1,8 @@
 import Header from '@/components/header';
-import { Metadata } from 'next';
-import { TagCount } from '@/types/sanity';
 import TagButton from '@/components/tagButton';
 import { getAllTags } from '@/lib/sanity';
+import { TagCount } from '@/types/sanity';
+import { Metadata } from 'next';
 
 export const revalidate = 60;
 

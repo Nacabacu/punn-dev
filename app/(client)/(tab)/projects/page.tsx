@@ -1,7 +1,7 @@
-import { Metadata } from 'next';
 import Header from '@/components/header';
 import ProjectCard from '@/components/projectCard';
 import { getAllProjects } from '@/lib/sanity';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Projects',

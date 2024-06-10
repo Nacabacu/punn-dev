@@ -1,6 +1,6 @@
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
-import LinkWrapper from './linkWrapper';
 import IconWrapper from './iconWrapper';
+import LinkWrapper from './linkWrapper';
 
 interface NotFoundProps {
   notFoundMessage: string;

@@ -1,9 +1,9 @@
-import { Post, Project, TagCount } from '@/types/sanity';
 import { client } from '@/sanity/lib/client';
+import { Post, Project, TagCount } from '@/types/sanity';
 
 export const getAllPost = async (): Promise<Post[]> => {
   const query = `
-  *[_type == 'post'] {
+  *[_type == 'post'] | order(publishedAt desc) {
     title,
     slug,
     publishedAt,

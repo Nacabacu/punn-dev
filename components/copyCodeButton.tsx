@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCopy } from '@fortawesome/free-regular-svg-icons';
 import { faCopy as faCopied } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useState } from 'react';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 interface CopyCodeButtonProps {
   code: string;

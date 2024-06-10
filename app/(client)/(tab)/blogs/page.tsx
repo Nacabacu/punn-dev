@@ -1,7 +1,7 @@
-import { Metadata } from 'next';
-import Header from '@/components/header';
 import BlogCard from '@/components/blogCard';
+import Header from '@/components/header';
 import { getAllPost } from '@/lib/sanity';
+import { Metadata } from 'next';
 
 export const revalidate = 60;
 

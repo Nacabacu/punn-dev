@@ -1,7 +1,7 @@
-import { MetadataRoute } from 'next';
+import { BLOGS_URL, BLOG_URL, PROJECTS_URL, TAG_URL, WEBSITE_URL } from '@/const';
+import { getAllPost, getAllTags } from '@/lib/sanity';
 import { Post, TagCount } from '@/types/sanity';
-import { TAG_URL, BLOG_URL, BLOGS_URL, PROJECTS_URL, WEBSITE_URL } from '@/const';
-import { getAllTags, getAllPost } from '@/lib/sanity';
+import { MetadataRoute } from 'next';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const posts: Post[] = await getAllPost();

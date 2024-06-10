@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import { useTheme } from 'next-themes';
-import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
+import { useEffect, useState } from 'react';
 import IconWrapper from './iconWrapper';
 
 const ThemeSwitch = () => {

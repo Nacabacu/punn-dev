@@ -1,7 +1,7 @@
-import { NextResponse } from 'next/server';
-import RSS from 'rss';
 import { BLOG_URL, WEBSITE_URL } from '@/const';
 import { getAllPost } from '@/lib/sanity';
+import { NextResponse } from 'next/server';
+import RSS from 'rss';
 
 export async function GET() {
   const feedOptions: RSS.FeedOptions = {

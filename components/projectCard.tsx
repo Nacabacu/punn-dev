@@ -1,10 +1,10 @@
-import Image from 'next/image';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
+import Image from 'next/image';
 
 import { Project } from '@/types/sanity';
-import LinkWrapper from './linkWrapper';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import IconWrapper from './iconWrapper';
+import LinkWrapper from './linkWrapper';
 
 interface ProjectCardProps {
   project: Project;

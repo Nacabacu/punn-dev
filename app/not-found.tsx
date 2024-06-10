@@ -1,6 +1,6 @@
+import NotFoundTemplate from '@/components/notFoundTemplate';
 import { HOME_URL } from '@/const';
 import { faHouseChimney } from '@fortawesome/free-solid-svg-icons';
-import NotFoundTemplate from '@/components/notFoundTemplate';
 
 const NotFound = () => {
   return (

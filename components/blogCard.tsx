@@ -1,7 +1,7 @@
-import Link from 'next/link';
-import { Post } from '@/types/sanity';
-import Tag from './tagButton';
 import { BLOG_URL } from '@/const';
+import { Post } from '@/types/sanity';
+import Link from 'next/link';
+import Tag from './tagButton';
 
 interface BlogCardProps {
   post: Post;

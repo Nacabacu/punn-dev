@@ -1,11 +1,11 @@
 'use client';
 
+import { TAG_URL } from '@/const';
+import { hasVerticalScroll } from '@/utils/html';
+import { faHashtag, faUpLong } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUpLong, faHashtag } from '@fortawesome/free-solid-svg-icons';
-import { hasVerticalScroll } from '@/utils/html';
-import { TAG_URL } from '@/const';
 import IconWrapper from './iconWrapper';
 
 const Footer = () => {

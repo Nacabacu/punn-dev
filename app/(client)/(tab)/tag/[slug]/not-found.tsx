@@ -1,6 +1,5 @@
-import React from 'react';
-import { HOME_URL } from '@/const';
 import NotFoundTemplate from '@/components/notFoundTemplate';
+import { HOME_URL } from '@/const';
 
 const NotFound = () => {
   return (
