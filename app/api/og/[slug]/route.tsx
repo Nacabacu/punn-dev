@@ -17,11 +17,10 @@ export async function GET(_request: Request, { params }: { params: { slug: strin
   return new ImageResponse(
     (
       <div
-        style={{ fontFamily: 'fantasy' }}
         tw="flex flex-col h-full w-full justify-between bg-[#c9d1d1]"
       >
-        <div tw="p-8 ml-auto text-4xl font-bold text-[#0070f3]">Punn.dev</div>
-        <div tw="flex justify-center mx-8 text-6xl leading-[120px]">{title}</div>
+        <div tw="p-8 ml-auto text-5xl text-[#0070f3]">Punn.dev</div>
+        <div tw="flex justify-center text-center mx-8 text-6xl leading-[90px]">{title}</div>
         {tags && (
           <div tw="p-8 flex">
             {tags.map((tag, index) => (

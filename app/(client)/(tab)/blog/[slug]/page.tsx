@@ -52,14 +52,15 @@ export const revalidate = 60;
 
 const BlogPage = async ({ params }: Params) => {
   const post = await getPost(params?.slug);
-  const proseBaseStyle = 'prose prose-stone  dark:prose-invert';
+  const proseBaseStyle = 'prose prose-stone dark:prose-invert';
+  const prosePreStyle = 'prose-pre:bg-grayCode';
   const prosePTagStyle =
     'prose-p:text-md prose-p:leading-7 sm:prose-p:text-lg sm:prose-p:leading-8';
   const proseBlockquoteStyle =
     'prose-blockquote:text-md prose-blockquote:leading-7 sm:prose-blockquote:text-lg sm:prose-blockquote:leading-8';
   const proseLiStyle =
     'prose-li:text-md prose-li:leading-7 sm:prose-li:text-lg sm:prose-li:leading-8';
-  const portableTextStyle = `w-full text-start ${proseBaseStyle} ${prosePTagStyle} ${proseBlockquoteStyle} ${proseLiStyle}`;
+  const portableTextStyle = `w-full text-start ${prosePreStyle} ${proseBaseStyle} ${prosePTagStyle} ${proseBlockquoteStyle} ${proseLiStyle}`;
 
   if (!post) {
     return NotFound();
@@ -68,7 +69,7 @@ const BlogPage = async ({ params }: Params) => {
   return (
     <>
       <Header title={post?.title} />
-      <div className={'text-center text-primary dark:text-primaryDark'}>
+      <div className={'text-center text-primary  dark:text-primaryDark'}>
         {new Date(post?.publishedAt).toDateString()}
       </div>
       <div className="mb-8 mt-4 text-center">
