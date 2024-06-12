@@ -12,6 +12,11 @@ export const post = defineType({
       validation: (Rule) => Rule.required().error('A title is required.'),
     }),
     defineField({
+      name: 'ogTitle',
+      title: 'OG Title',
+      type: 'string',
+    }),
+    defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',

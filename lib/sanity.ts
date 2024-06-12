@@ -24,6 +24,7 @@ export const getPost = async (slug: string): Promise<Post> => {
   const query = `
   *[_type == 'post' && slug.current == '${slug}'][0] {
     title,
+    ogTitle,
     slug,
     publishedAt,
     excerpt,

@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/no-unknown-property */
 import { getPost } from '@/lib/sanity';
 import { ImageResponse } from 'next/og';
@@ -12,21 +14,31 @@ export async function GET(_request: Request, { params }: { params: { slug: strin
     });
   }
 
-  const { title, tags } = post;
+  const { ogTitle, title, tags } = post;
 
   return new ImageResponse(
     (
       <div
         tw="flex flex-col h-full w-full justify-between bg-[#c9d1d1]"
       >
-        <div tw="p-8 ml-auto text-5xl text-[#0070f3]">Punn.dev</div>
-        <div tw="flex justify-center text-center mx-8 text-6xl leading-[90px]">{title}</div>
+        <div tw="p-8 text-5xl text-[#0070f3]">Punn.dev</div>
+        <div
+          style={{
+            backgroundImage: 'linear-gradient(90deg, #0070f3, #003575)',
+            backgroundClip: 'text',
+            color: 'transparent',
+          }}
+          tw="flex justify-center text-center mx-8 text-6xl leading-[90px]
+        "
+        >
+          {ogTitle ?? title}
+        </div>
         {tags && (
-          <div tw="p-8 flex">
+          <div tw="p-8 ml-auto flex">
             {tags.map((tag, index) => (
               <div
                 key={index}
-                tw="mr-4 rounded-lg border-4 border-[#0070f3] p-2 text-4xl lowercase"
+                tw="mr-4 rounded-xl border-2 border-[#0070f3] p-2 text-4xl lowercase"
               >
                 {`#${tag.name}`}
               </div>

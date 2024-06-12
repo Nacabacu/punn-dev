@@ -22,7 +22,7 @@ const config: Config = {
         secondaryDark: '#fa9450',
         gray: '#9ca3af',
         grayDark: '#374151',
-        grayCode: '#282C34'
+        grayCode: '#282C34',
       },
       screens: {
         xs: '420px',

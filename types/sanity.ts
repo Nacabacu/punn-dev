@@ -1,5 +1,6 @@
 export interface Post {
   title: string;
+  ogTitle?: string;
   slug: Slug;
   publishedAt: string;
   excerpt: string;
