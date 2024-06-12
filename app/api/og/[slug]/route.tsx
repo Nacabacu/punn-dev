@@ -18,9 +18,7 @@ export async function GET(_request: Request, { params }: { params: { slug: strin
 
   return new ImageResponse(
     (
-      <div
-        tw="flex flex-col h-full w-full justify-between bg-[#c9d1d1]"
-      >
+      <div tw="flex flex-col h-full w-full justify-between bg-[#c9d1d1]">
         <div tw="p-8 text-5xl text-[#0070f3]">Punn.dev</div>
         <div
           style={{

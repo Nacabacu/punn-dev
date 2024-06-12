@@ -1,3 +1,4 @@
+import { GoogleAnalytics } from '@next/third-parties/google';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata } from 'next';
@@ -54,6 +55,7 @@ const RootLayout = ({
       <body>
         <Analytics />
         <SpeedInsights />
+        <GoogleAnalytics gaId="G-CTBR68YLBZ" />
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
