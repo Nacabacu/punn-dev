@@ -2,6 +2,7 @@
 
 import { Highlight, themes } from 'prism-react-renderer';
 import CopyCodeButton from './copyCodeButton';
+import clsx from 'clsx';
 
 interface CodeHighlighterProps {
   code: string;
@@ -20,12 +21,12 @@ const CodeHighlighter = ({ code, language, filename }: CodeHighlighterProps) => 
             </div>
           )}
           <div className="relative text-sm">
-            <pre className={`${className} m-auto rounded-tl-none`} style={style}>
+            <pre className={`${className} m-auto ${clsx({'rounded-tl-none': filename})}`} style={style}>
               <div className="flex flex-row gap-1.5">
                 <div className="flex flex-col items-end">
                   {tokens.map((_, index) => {
                     return (
-                      <span key={index} className="opacity-30">
+                      <span key={index} className="opacity-30 select-none">
                         {index + 1}
                       </span>
                     );

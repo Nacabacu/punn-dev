@@ -5,7 +5,7 @@ const RootLayout = ({
 }>) => {
   return (
     <>
-      <div className="mx-3 flex max-w-2xl flex-grow flex-col items-center">{children}</div>
+      <article className="mx-3 flex max-w-2xl flex-grow flex-col items-center">{children}</article>
     </>
   );
 };
