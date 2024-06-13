@@ -3,6 +3,7 @@
 import { useTheme } from 'next-themes';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import { WEBSITE_URL } from '../const';
 
 const Webring = () => {
   const { theme } = useTheme();
@@ -31,7 +32,7 @@ const Webring = () => {
         alt="วงแหวนเว็บ"
         width="28"
         height="28"
-        src={`https://webring.wonderful.software/webring.${currentTheme === 'dark' ? 'white' : 'black'}.svg`}
+        src={`${WEBSITE_URL}/webring-${currentTheme === 'dark' ? 'dark' : 'light'}.svg`}
       />
     </a>
   );
