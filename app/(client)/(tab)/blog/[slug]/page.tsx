@@ -60,7 +60,8 @@ const BlogPage = async ({ params }: Params) => {
     'prose-blockquote:text-md prose-blockquote:leading-7 sm:prose-blockquote:text-lg sm:prose-blockquote:leading-8';
   const proseLiStyle =
     'prose-li:text-md prose-li:leading-7 sm:prose-li:text-lg sm:prose-li:leading-8';
-  const portableTextStyle = `w-full text-start ${prosePreStyle} ${proseBaseStyle} ${prosePTagStyle} ${proseBlockquoteStyle} ${proseLiStyle}`;
+  const proseH4Style = 'prose-h4:text-lg prose-h4:leading-9';
+  const portableTextStyle = `w-full text-start ${prosePreStyle} ${proseBaseStyle} ${prosePTagStyle} ${proseBlockquoteStyle} ${proseLiStyle} ${proseH4Style}`;
 
   if (!post) {
     return NotFound();
