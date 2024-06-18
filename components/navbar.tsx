@@ -26,8 +26,8 @@ const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="flex flex-col">
-      <div className="my-8 flex justify-center leading-7">
+    <nav className={`fixed w-screen bg-background dark:bg-backgroundDark flex flex-col z-50 ${clsx({'border-b border-dashed border-primary border-opacity-50 dark:border-primaryDark': pathname !== HOME_URL})}`}>
+      <div className="my-4 flex justify-center leading-7">
         <Webring />
         <span className="flex flex-1 justify-center gap-x-6 sm:gap-x-10">
           {LINKS.map(({ name, url }) => (
