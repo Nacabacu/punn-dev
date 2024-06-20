@@ -6,9 +6,10 @@ interface TagProps {
   name: string;
   slug?: Slug;
   count?: number;
+  className?: string;
 }
 
-const TagButton = ({ name, slug, count }: TagProps) => {
+const TagButton = ({ name, slug, count, className }: TagProps) => {
   const formatText = () => {
     return count ? `#${name} (${count})` : `#${name}`;
   };
@@ -20,7 +21,7 @@ const TagButton = ({ name, slug, count }: TagProps) => {
   return (
     <Link href={`${TAG_URL}/${slug.current}`}>
       <span
-        className={`${baseStlye} transition-background-color hover:bg-primary hover:text-white dark:hover:bg-primaryDark`}
+        className={`${baseStlye} ${className} transition-background-color hover:bg-primary hover:text-white dark:hover:bg-primaryDark`}
       >
         {formatText()}
       </span>

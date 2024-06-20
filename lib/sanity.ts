@@ -49,7 +49,7 @@ export const getAllTags = async (): Promise<TagCount[]> => {
     slug,
     _id,
     'postCount': count(*[_type == 'post' && references('tags', ^._id)])
-  }
+  } | order(postCount desc)
   `;
 
   const tags = client.fetch<TagCount[]>(query);
