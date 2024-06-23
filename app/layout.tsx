@@ -14,8 +14,8 @@ config.autoAddCss = false;
 export const metadata: Metadata = {
   metadataBase: new URL(WEBSITE_URL),
   title: {
-    default: 'Punn.dev',
-    template: 'Punn.dev | %s',
+    default: 'Punn a full stack developer',
+    template: 'Punn | %s',
   },
   keywords: [
     'Punn',
@@ -27,10 +27,14 @@ export const metadata: Metadata = {
     'blogs',
     'development blogs',
   ],
-  description: "Punn's blogs",
+  authors: {
+    name: 'Punn Nararatwong',
+  },
+  robots: 'index follow',
+  description: "Blog of Punn Nararatwong, a full stack developer.",
   openGraph: {
-    title: 'Punn.dev',
-    description: "Punn's blogs",
+    title: 'Punn',
+    description: "Blog of Punn Nararatwong, a full stack developer.",
     type: 'website',
     locale: 'en_US',
     url: WEBSITE_URL,

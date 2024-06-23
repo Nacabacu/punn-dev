@@ -9,34 +9,25 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const postUrls = posts.map((post) => ({
     url: `${WEBSITE_URL}${BLOG_URL}/${post.slug.current}`,
-    lastModified: new Date(post.publishedAt),
+    lastModified: new Date(post.publishedAt).toISOString(),
   }));
 
   const tagUrls = tags.map((tag) => ({
-    url: `${WEBSITE_URL}${TAG_URL}/${tag.slug.current}`,
-    lastModified: new Date(),
+    url: `${WEBSITE_URL}${TAG_URL}/${tag.slug.current}`
   }));
 
   return [
     {
-      url: WEBSITE_URL,
-      lastModified: new Date(),
-      priority: 1,
+      url: WEBSITE_URL
     },
     {
-      url: `${WEBSITE_URL}${BLOGS_URL}`,
-      lastModified: new Date(),
-      priority: 0.8,
+      url: `${WEBSITE_URL}${BLOGS_URL}`
     },
     {
-      url: `${WEBSITE_URL}${PROJECTS_URL}`,
-      lastModified: new Date(),
-      priority: 0.8,
+      url: `${WEBSITE_URL}${PROJECTS_URL}`
     },
     {
-      url: `${WEBSITE_URL}${TAG_URL}`,
-      lastModified: new Date(),
-      priority: 0.8,
+      url: `${WEBSITE_URL}${TAG_URL}`
     },
     ...postUrls,
     ...tagUrls,

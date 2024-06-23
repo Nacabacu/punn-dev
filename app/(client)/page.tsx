@@ -7,8 +7,8 @@ const HomePage = () => {
   const iconClassName = 'sm:w-9 sm:h-9 sm:text-3xl w-8 h-8 text-2xl';
   return (
     <div className="flex flex-grow flex-col items-center justify-center">
-      <div className="text-center text-4xl font-extrabold sm:text-5xl">Punn Nararatwong</div>
-      <div className="pt-4 text-xl text-primary dark:text-primaryDark">a full stack developer</div>
+      <h1 className="text-center text-4xl font-extrabold sm:text-5xl">Punn Nararatwong</h1>
+      <h2 className="pt-4 text-xl text-primary dark:text-primaryDark">a full stack developer</h2>
       <div className="flex space-x-12 pt-4 text-xl">
         <IconWrapper url="https://github.com/Nacabacu" className={iconClassName} icon={faGithub} />
         <IconWrapper

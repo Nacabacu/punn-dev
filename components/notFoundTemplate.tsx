@@ -10,7 +10,7 @@ interface NotFoundProps {
 
 const NotFoundTemplate = ({ notFoundMessage, url, icon }: NotFoundProps) => {
   return (
-    <div className="flex flex-grow flex-col items-center justify-center bg-background dark:bg-backgroundDark">
+    <div className="flex h-full flex-grow flex-col items-center justify-center bg-background dark:bg-backgroundDark">
       <div className="text-2xl font-extrabold text-primary dark:text-primaryDark">
         {notFoundMessage}
       </div>

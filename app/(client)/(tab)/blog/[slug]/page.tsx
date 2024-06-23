@@ -62,6 +62,7 @@ const BlogPage = async ({ params }: Params) => {
     'prose-li:text-md prose-li:leading-7 sm:prose-li:text-lg sm:prose-li:leading-8';
   const proseH4Style = 'prose-h4:text-lg prose-h4:leading-9';
   const portableTextStyle = `w-full text-start ${prosePreStyle} ${proseBaseStyle} ${prosePTagStyle} ${proseBlockquoteStyle} ${proseLiStyle} ${proseH4Style}`;
+  const publishedDate = new Date(post?.publishedAt);
 
   if (!post) {
     return NotFound();
@@ -70,15 +71,15 @@ const BlogPage = async ({ params }: Params) => {
   return (
     <>
       <Header title={post?.title} />
-      <div className={'text-center text-primary  dark:text-primaryDark'}>
-        {new Date(post?.publishedAt).toDateString()}
-      </div>
+      <time dateTime={publishedDate.toISOString()} className={'text-center text-primary  dark:text-primaryDark'}>
+        {publishedDate.toDateString()}
+      </time>
       <div className="mb-8 mt-4 text-center">
         {post?.tags?.map((tag) => <TagButton key={tag?._id} name={tag?.name} slug={tag?.slug} />)}
       </div>
-      <div className={portableTextStyle}>
+      <article className={portableTextStyle}>
         <PortableText value={post?.body} components={myPortableTextComponents} />
-      </div>
+      </article>
     </>
   );
 };

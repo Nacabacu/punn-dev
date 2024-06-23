@@ -5,7 +5,7 @@ import RSS from 'rss';
 
 export async function GET() {
   const feedOptions: RSS.FeedOptions = {
-    title: 'Punn.dev',
+    title: 'Punn',
     description: "Punn's programming blogs",
     site_url: WEBSITE_URL,
     feed_url: `${WEBSITE_URL}/api/feed`,

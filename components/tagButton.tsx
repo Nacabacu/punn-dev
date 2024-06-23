@@ -19,7 +19,7 @@ const TagButton = ({ name, slug, count, className }: TagProps) => {
   if (!slug) return <span className={baseStlye}>{formatText()}</span>;
 
   return (
-    <Link href={`${TAG_URL}/${slug.current}`}>
+    <Link href={`${TAG_URL}/${slug.current}`} title={`Tag ${name}`}>
       <span
         className={`${baseStlye} ${className} transition-background-color hover:bg-primary hover:text-white dark:hover:bg-primaryDark`}
       >

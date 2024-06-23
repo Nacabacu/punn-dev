@@ -8,10 +8,10 @@ const RootLayout = ({
 }>) => {
   return (
     <div className="flex min-h-screen flex-col bg-background transition-background-color dark:bg-backgroundDark">
-      <main className="flex flex-grow flex-col">
+      <div className="flex flex-grow flex-col">
         <Navbar />
-        <div className="flex flex-grow justify-center mt-16">{children}</div>
-      </main>
+        <main className="flex flex-grow justify-center mt-16">{children}</main>
+      </div>
       <Footer />
     </div>
   );

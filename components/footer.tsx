@@ -35,7 +35,7 @@ const Footer = () => {
         </div>
       )}
       <span className="leading-8">
-        <IconWrapper url={TAG_URL} className="h-8 w-8" icon={faHashtag} />
+        <IconWrapper url={TAG_URL} className="h-8 w-8" icon={faHashtag} title='Tags' />
       </span>
     </footer>
   );

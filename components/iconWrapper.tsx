@@ -7,9 +7,10 @@ interface IconWrapperProps {
   url?: string;
   newtab?: boolean;
   className?: string;
+  title?: string;
 }
 
-const IconWrapper = ({ icon, url, newtab, className }: IconWrapperProps) => {
+const IconWrapper = ({ icon, url, newtab, className, title }: IconWrapperProps) => {
   const defaultClassName = 'flex justify-center items-center';
 
   if (!url)
@@ -24,6 +25,7 @@ const IconWrapper = ({ icon, url, newtab, className }: IconWrapperProps) => {
       href={url}
       className={`${defaultClassName} hover:text-primary dark:hover:text-primaryDark ${className}`}
       target={newtab ? '_blank' : undefined}
+      title={title}
     >
       <FontAwesomeIcon icon={icon} />
     </Link>
