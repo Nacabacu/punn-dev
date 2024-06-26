@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(WEBSITE_URL),
   title: {
     default: 'Punn a full stack developer',
-    template: 'Punn | %s',
+    template: '%s | Punn.dev',
   },
   keywords: [
     'Punn',
