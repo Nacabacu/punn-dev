@@ -71,7 +71,10 @@ const BlogPage = async ({ params }: Params) => {
   return (
     <>
       <Header title={post?.title} />
-      <time dateTime={publishedDate.toISOString()} className={'text-center text-primary  dark:text-primaryDark'}>
+      <time
+        dateTime={publishedDate.toISOString()}
+        className={'text-center text-primary dark:text-primaryDark'}
+      >
         {publishedDate.toDateString()}
       </time>
       <div className="mb-8 mt-4 text-center">
@@ -105,7 +108,7 @@ const myPortableTextComponents: Partial<PortableTextReactComponents> = {
   },
   marks: {
     code: ({ children }) => (
-      <span className="rounded-sm bg-gray p-0.5 dark:bg-grayDark">{children}</span>
+      <span className="rounded-sm py-0.5 px-1 bg-grayCode text-grayProse">{children}</span>
     ),
     link: ({ children, value }) => (
       <a href={value.href} target="_blank" rel="noopener noreferrer">

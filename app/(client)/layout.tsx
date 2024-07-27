@@ -10,7 +10,7 @@ const RootLayout = ({
     <div className="flex min-h-screen flex-col bg-background transition-background-color dark:bg-backgroundDark">
       <div className="flex flex-grow flex-col">
         <Navbar />
-        <main className="flex flex-grow justify-center mt-16">{children}</main>
+        <main className="mt-16 flex flex-grow justify-center">{children}</main>
       </div>
       <Footer />
     </div>

@@ -16,10 +16,16 @@ const AllTagsPage = async () => {
   return (
     <>
       <Header title={'All Tags'} />
-      <div className='flex flex-wrap gap-y-2 justify-center'>
+      <div className="flex flex-wrap justify-center gap-y-2">
         {tags?.length > 0 &&
           tags?.map((tag) => (
-            <TagButton className='inline-block text-nowrap' key={tag?._id} name={tag?.name} slug={tag?.slug} count={tag?.postCount} />
+            <TagButton
+              className="inline-block text-nowrap"
+              key={tag?._id}
+              name={tag?.name}
+              slug={tag?.slug}
+              count={tag?.postCount}
+            />
           ))}
       </div>
     </>

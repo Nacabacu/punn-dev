@@ -18,7 +18,7 @@ const MermaidRenderer = ({ diagram }: MermaidRendererProps) => {
   }, []);
 
   return (
-    <div className="max-w-[95vw] m-auto">
+    <div className="m-auto max-w-[95vw]">
       <pre className="mermaid">{diagram}</pre>
     </div>
   );

@@ -28,7 +28,9 @@ const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <header className={`fixed w-screen transition-colors bg-background dark:bg-backgroundDark flex flex-col z-50 ${clsx({'border-b border-dashed border-primary border-opacity-50 dark:border-primaryDark': pathname !== HOME_URL})}`}>
+    <header
+      className={`fixed z-50 flex w-screen flex-col bg-background transition-colors dark:bg-backgroundDark ${clsx({ 'border-b border-dashed border-primary border-opacity-50 dark:border-primaryDark': pathname !== HOME_URL })}`}
+    >
       <div className="my-4 flex justify-center leading-7">
         <Webring />
         <nav className="flex flex-1 justify-center gap-x-6 sm:gap-x-10">

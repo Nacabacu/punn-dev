@@ -8,7 +8,7 @@ interface LinkWrapperProps {
   title?: string;
 }
 
-const LinkWrapper = ({ children, url, newtab, className, title}: LinkWrapperProps) => {
+const LinkWrapper = ({ children, url, newtab, className, title }: LinkWrapperProps) => {
   return (
     <Link
       href={url}

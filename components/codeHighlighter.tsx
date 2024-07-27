@@ -14,7 +14,7 @@ const CodeHighlighter = ({ code, language, filename }: CodeHighlighterProps) => 
   return (
     <Highlight language={language || 'javascript'} code={code || ''} theme={themes.oneDark}>
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <div className="max-w-[95vw] m-auto">
+        <div className="m-auto max-w-[95vw]">
           {filename && (
             <div className="w-fit rounded-t bg-primary px-2 py-1 text-sm text-white dark:bg-primaryDark">
               {filename}
@@ -29,7 +29,7 @@ const CodeHighlighter = ({ code, language, filename }: CodeHighlighterProps) => 
                 <div className="flex flex-col items-end">
                   {tokens.map((_, index) => {
                     return (
-                      <span key={index} className="opacity-30 select-none">
+                      <span key={index} className="select-none opacity-30">
                         {index + 1}
                       </span>
                     );

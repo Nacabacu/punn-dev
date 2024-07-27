@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(WEBSITE_URL),
   title: {
     default: 'Punn a full stack developer',
-    template: '%s | Punn.dev',
+    template: '%s | punn.dev',
   },
   keywords: [
     'Punn',
@@ -31,10 +31,10 @@ export const metadata: Metadata = {
     name: 'Punn Nararatwong',
   },
   robots: 'index follow',
-  description: "Blog of Punn Nararatwong, a full stack developer.",
+  description: 'Blog of Punn Nararatwong, a full stack developer.',
   openGraph: {
     title: 'Punn',
-    description: "Blog of Punn Nararatwong, a full stack developer.",
+    description: 'Blog of Punn Nararatwong, a full stack developer.',
     type: 'website',
     locale: 'en_US',
     url: WEBSITE_URL,
