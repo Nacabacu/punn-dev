@@ -1,7 +1,7 @@
 import { BLOG_URL } from '@/const';
 import { Post } from '@/types/sanity';
 import Link from 'next/link';
-import Tag from './tagButton';
+import { formatDate } from '../utils/date';
 
 interface BlogCardProps {
   post: Post;
@@ -9,18 +9,16 @@ interface BlogCardProps {
 
 const BlogCard = ({ post }: BlogCardProps) => {
   return (
-    <div className="flex flex-col rounded-md p-4 shadow-md transition-all hover:shadow-xl dark:shadow-lg dark:hover:shadow-2xl">
+    <div className="flex gap-3">
+      <time
+        dateTime={post?.publishedAt}
+        className="min-w-24 text-sm leading-7 text-primary dark:text-primaryDark"
+      >
+        {formatDate(post?.publishedAt)}
+      </time>
       <Link href={`${BLOG_URL}/${post?.slug?.current}`}>
-        <h2 className={'line-clamp-2 text-xl'}>{post?.title}</h2>
-        <p className={'my-1 text-sm text-primary dark:text-primaryDark'}>
-          {new Date(post?.publishedAt).toDateString()}
-        </p>
-        <p className="line-clamp-2 min-h-14 leading-7">{post?.excerpt}</p>
+        <h2 className="text-lg hover:text-primary dark:hover:text-primaryDark">{post?.title}</h2>
       </Link>
-
-      <div className={post.tags && 'mt-3'}>
-        {post.tags?.map((tag) => <Tag key={tag._id} name={tag?.name} slug={tag?.slug} />)}
-      </div>
     </div>
   );
 };

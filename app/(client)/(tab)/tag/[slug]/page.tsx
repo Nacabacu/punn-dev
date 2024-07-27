@@ -43,7 +43,7 @@ const TagPage = async ({ params }: Params) => {
   return (
     <>
       <Header title={`#${params.slug}`} />
-      <div className="grid w-full grid-cols-1 gap-4">
+      <div className="flex w-full flex-col gap-4">
         {postList?.map((post) => <BlogCard key={post.slug.current} post={post} />)}
       </div>
     </>

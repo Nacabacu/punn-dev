@@ -13,6 +13,7 @@ import { urlForImage } from '@/sanity/lib/image';
 import { MermaidDiagramProps, Post } from '@/types/sanity';
 
 import MermaidRenderer from '@/components/mermaidRenderer';
+import { formatDate } from '../../../../../utils/date';
 import NotFound from '../not-found';
 
 interface Params {
@@ -62,7 +63,7 @@ const BlogPage = async ({ params }: Params) => {
     'prose-li:text-md prose-li:leading-7 sm:prose-li:text-lg sm:prose-li:leading-8';
   const proseH4Style = 'prose-h4:text-lg prose-h4:leading-9';
   const portableTextStyle = `w-full text-start ${prosePreStyle} ${proseBaseStyle} ${prosePTagStyle} ${proseBlockquoteStyle} ${proseLiStyle} ${proseH4Style}`;
-  const publishedDate = new Date(post?.publishedAt);
+  const publishedDate = formatDate(post?.publishedAt);
 
   if (!post) {
     return NotFound();
@@ -72,10 +73,10 @@ const BlogPage = async ({ params }: Params) => {
     <>
       <Header title={post?.title} />
       <time
-        dateTime={publishedDate.toISOString()}
+        dateTime={post?.publishedAt}
         className={'text-center text-primary dark:text-primaryDark'}
       >
-        {publishedDate.toDateString()}
+        {publishedDate}
       </time>
       <div className="mb-8 mt-4 text-center">
         {post?.tags?.map((tag) => <TagButton key={tag?._id} name={tag?.name} slug={tag?.slug} />)}
@@ -108,7 +109,7 @@ const myPortableTextComponents: Partial<PortableTextReactComponents> = {
   },
   marks: {
     code: ({ children }) => (
-      <span className="rounded-sm py-0.5 px-1 bg-grayCode text-grayProse">{children}</span>
+      <span className="rounded-sm bg-grayCode px-1 py-0.5 text-grayProse">{children}</span>
     ),
     link: ({ children, value }) => (
       <a href={value.href} target="_blank" rel="noopener noreferrer">

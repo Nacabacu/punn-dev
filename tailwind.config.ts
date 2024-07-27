@@ -23,7 +23,7 @@ const config: Config = {
         gray: '#9ca3af',
         grayDark: '#374151',
         grayCode: '#282C34',
-        grayProse: '#d6d3d1'
+        grayProse: '#d6d3d1',
       },
       screens: {
         xs: '420px',
