@@ -12,7 +12,7 @@ interface CodeHighlighterProps {
 
 const CodeHighlighter = ({ code, language, filename }: CodeHighlighterProps) => {
   return (
-    <Highlight language={language || 'javascript'} code={code || ''} theme={themes.oneDark}>
+    <Highlight language={language} code={code || ''} theme={themes.oneDark}>
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <div className="m-auto max-w-[95vw]">
           {filename && (
