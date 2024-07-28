@@ -7,7 +7,10 @@ const config: Config = {
       typography: () => ({
         stone: {
           css: {
-            '--tw-prose-bullets': '#78716c',
+            '--tw-prose-bullets': '#0070f3',
+            '--tw-prose-invert-bullets': '#ff7113',
+            '--tw-prose-counters': '#0070f3',
+            '--tw-prose-invert-counters': '#ff7113',
             '--tw-prose-links': '#0070f3',
             '--tw-prose-invert-links': '#ff7113',
           },
